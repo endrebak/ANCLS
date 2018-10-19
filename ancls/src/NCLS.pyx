@@ -1,6 +1,6 @@
 
 cimport cython
-from cancls cimport Interval, Header
+# from cancls cimport Interval, Header
 
 from libcpp.vector cimport vector
 from libcpp.algorithm cimport sort as stdsort
@@ -9,6 +9,19 @@ from libcpp.algorithm cimport sort as stdsort
 from libcpp cimport bool
 from libc.stdint cimport uint32_t, int32_t
 from numpy import uint32
+
+
+cdef struct Interval:
+  uint32_t start
+  uint32_t end
+  uint32_t index
+  int32_t sublist
+
+
+
+cdef struct Header:
+    uint32_t start
+    uint32_t length
 
 
 cdef bool starts_then_longest(const Interval lhs, const Interval rhs):
@@ -38,8 +51,12 @@ cdef bool sublists_then_start(const Interval lhs, const Interval rhs):
 
 cdef class NCLS:
 
-    cdef vector[Interval] intervals
-    cdef uint32_t nsub
+    cdef:
+        vector[Interval] intervals
+        int32_t ntop # number intervals in main list
+        int32_t nsub # number intervals not in main list
+        int32_t nlists # number sublists that together contain all intervals in nsub
+        vector[Interval] sublists #= vector[Interval]
 
     @cython.boundscheck(False)
     @cython.wraparound(False)
@@ -48,34 +65,45 @@ cdef class NCLS:
 
         cdef:
             uint32_t i
-            uint32_t ntop # number intervals in main list
-            uint32_t nsub # number intervals not in main list
-            uint32_t nlists # number sublists that together contain all intervals in nsub
             length = len(starts)
             Interval interval
             vector[Interval] intervals = vector[Interval](len(starts))
-            vector[Interval] sublists #= vector[Interval]
 
         for i in range(length):
             interval.start = starts[i]
             interval.end = ends[i]
             interval.index = ids[i]
+            interval.sublist = -1
             intervals[i] = interval
 
         self.intervals = intervals
-        print("first sort")
         self.sort_on_starts_then_longest()
-        print("add parents")
         self.nsub = self.add_parents_inplace()
 
         if self.nsub > 0:
 
-            self.set_header_indexes(intervals)
+            print("set headerindexes")
+            self.set_header_indexes()
+            print("sort on sublists")
             self.sort_on_sublists_then_starts()
 
+            print("create sublist header")
             self.create_sublist_header()
 
+            print("remove sublists")
             self.remove_sublists()
+
+    def __str__(self):
+
+        print("Heyyo!")
+        return(str(self.intervals))
+
+
+    def __repr__(self):
+
+        print("repr!")
+        return(str(self.intervals))
+
 
 
 
@@ -94,13 +122,17 @@ cdef class NCLS:
         cdef:
             uint32_t nsub
             int32_t parent
-            uint32_t i = 0
-            uint32_t length = self.intervals.size()
+            int32_t i = 0
+            int32_t length = self.intervals.size()
             vector[Interval] intervals = self.intervals
             bool same_or_not_contained
+            Interval interval
 
         nsub = 0
 
+        print(list(self.intervals))
+
+        i = 0
         while (i < length):
             parent = i
             i = parent + 1
@@ -109,11 +141,14 @@ cdef class NCLS:
                 same_or_not_contained = (intervals[i].end > intervals[parent].end) \
                     or (intervals[i].end == intervals[parent].end and intervals[i].start == intervals[parent].start)
 
-                print("same_or_not_contained", same_or_not_contained)
                 if same_or_not_contained:
+                    # print("same_or_not_contained", same_or_not_contained)
                     parent = intervals[parent].sublist # all are -1 on instantiation
+                    # print(intervals[parent])
                 else:
+                    # print("same_or_not_contained", same_or_not_contained)
                     intervals[i].sublist = parent # MARK AS CONTAINED IN parent
+                    # print(intervals[parent])
                     nsub += 1 # COUNT TOTAL #SUBLIST ENTRIES
                     parent = i # AND PUSH ONTO RECURSIVE STACK
                     i += 1 # ADVANCE TO NEXT INTERVAL
@@ -128,11 +163,12 @@ cdef class NCLS:
             uint32_t i = 0
             uint32_t j = 0
             uint32_t nlists = 0
-            uint32_t parent
+            int32_t parent
             vector[Interval] sublists = vector[Interval](self.nsub)
             vector[Interval] intervals = self.intervals
+            uint32_t length = self.intervals.size()
 
-        for i in range(self.intervals.size()):
+        for i in range(length):
             parent = self.intervals[i].sublist
             if parent >= 0:
                 sublists[j].start = i
@@ -155,10 +191,15 @@ cdef class NCLS:
             vector[Header] subheaders = vector[Header]()
             vector[Interval] sublists = self.sublists
             vector[Interval] intervals = self.intervals
+            uint32_t i, j
+            int32_t parent, k
+            int32_t zero = 0
 
         subheaders.resize(self.nlists)
+        print("sublist")
 
         for i in range(self.nsub):
+            print(i)
 
             j = sublists[i].start
             parent = sublists[i].sublist
@@ -167,7 +208,7 @@ cdef class NCLS:
 
             k = intervals[parent].sublist
 
-            if subheaders[k].length == 0:
+            if subheaders[k].length == zero:
                 subheaders[k].start = i
 
             subheaders[k].length += 1

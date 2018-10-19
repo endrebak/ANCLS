@@ -7,8 +7,6 @@ struct Interval {
   uint32_t end;
   uint32_t index;
   int32_t sublist;
-
-  Interval(): sublist(-1) {}
 };
 
 
