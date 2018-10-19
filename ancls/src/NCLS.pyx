@@ -57,6 +57,7 @@ cdef class NCLS:
         int32_t nsub # number intervals not in main list
         int32_t nlists # number sublists that together contain all intervals in nsub
         vector[Interval] sublists #= vector[Interval]
+        vector[Header] subheaders
 
     @cython.boundscheck(False)
     @cython.wraparound(False)
@@ -124,7 +125,7 @@ cdef class NCLS:
             int32_t parent
             int32_t i = 0
             int32_t length = self.intervals.size()
-            vector[Interval] intervals = self.intervals
+            # self.intervals
             bool same_or_not_contained
             Interval interval
 
@@ -138,17 +139,15 @@ cdef class NCLS:
             i = parent + 1
 
             while i < length and parent >= 0: # TOP LEVEL LIST SCAN
-                same_or_not_contained = (intervals[i].end > intervals[parent].end) \
-                    or (intervals[i].end == intervals[parent].end and intervals[i].start == intervals[parent].start)
+                same_or_not_contained = (self.intervals[i].end > self.intervals[parent].end) \
+                    or (self.intervals[i].end == self.intervals[parent].end and self.intervals[i].start == self.intervals[parent].start)
 
                 if same_or_not_contained:
-                    # print("same_or_not_contained", same_or_not_contained)
-                    parent = intervals[parent].sublist # all are -1 on instantiation
-                    # print(intervals[parent])
+                    parent = self.intervals[parent].sublist # all are -1 on instantiation
+                    print("i: {} has parent {}".format(i, self.intervals[parent]))
                 else:
-                    # print("same_or_not_contained", same_or_not_contained)
-                    intervals[i].sublist = parent # MARK AS CONTAINED IN parent
-                    # print(intervals[parent])
+                    self.intervals[i].sublist = parent # MARK AS CONTAINED IN parent
+                    print("i: {} has parent {}".format(i, self.intervals[parent]))
                     nsub += 1 # COUNT TOTAL #SUBLIST ENTRIES
                     parent = i # AND PUSH ONTO RECURSIVE STACK
                     i += 1 # ADVANCE TO NEXT INTERVAL
@@ -165,21 +164,23 @@ cdef class NCLS:
             uint32_t nlists = 0
             int32_t parent
             vector[Interval] sublists = vector[Interval](self.nsub)
-            vector[Interval] intervals = self.intervals
+            # vector[Interval] self.intervals
             uint32_t length = self.intervals.size()
 
         for i in range(length):
             parent = self.intervals[i].sublist
+            print("parent for interval {} is {}".format(i, parent))
             if parent >= 0:
                 sublists[j].start = i
                 sublists[j].sublist = parent
                 j += 1
 
-                if intervals[parent].sublist == -1:
-                    intervals[parent].sublist = nlists
+                if self.intervals[parent].sublist < 0:
+                    print("Setting parent {} to sublist {}".format(parent, nlists + 1))
+                    self.intervals[parent].sublist = nlists
                     nlists += 1
 
-            intervals[i].sublist = -1
+            self.intervals[i].sublist = -1
 
         self.nlists = nlists
         self.sublists = sublists
@@ -188,35 +189,41 @@ cdef class NCLS:
     def create_sublist_header(self):
 
         cdef:
-            vector[Header] subheaders = vector[Header]()
-            vector[Interval] sublists = self.sublists
-            vector[Interval] intervals = self.intervals
             uint32_t i, j
+            uint32_t nsub = self.nsub
+            uint32_t nlists = self.nlists
             int32_t parent, k
-            int32_t zero = 0
+            uint32_t zero = 0
 
-        subheaders.resize(self.nlists)
-        print("sublist")
+        self.subheaders.resize(nlists)
+        for i in range(nlists):
+            self.subheaders[i] = [0, 0]
 
-        for i in range(self.nsub):
-            print(i)
+        for i in range(nsub):
 
-            j = sublists[i].start
-            parent = sublists[i].sublist
+            j = self.sublists[i].start
+            # print("j, self.intervals.size()", j, self.intervals.size())
+            parent = self.sublists[i].sublist
+            # print("i, self.sublists.size()", i, self.sublists.size())
 
-            sublists[i] = intervals[j]
+            self.sublists[i] = self.intervals[j]
 
-            k = intervals[parent].sublist
+            # k=im[parent].sublist;
+            # if (subheader[k].len==0) /* START A NEW SUBLIST */
+            #   subheader[k].start=i;
+            # print("parent", parent)
+            # raise
+            k = self.intervals[parent].sublist
 
-            if subheaders[k].length == zero:
-                subheaders[k].start = i
+            print("k, self.intervals.size()", k, self.subheaders.size())
+            if self.subheaders[k].length == zero:
+                self.subheaders[k].start = i
 
-            subheaders[k].length += 1
+            self.subheaders[k].length += 1
 
-            intervals[j].sublist = -2 # mark for deletion
+            self.intervals[j].sublist = -2 # mark for deletion
 
 
-        self.sublists = sublists
 
 
     def remove_sublists(self):
@@ -224,25 +231,23 @@ cdef class NCLS:
         # print("intervals 1", intervals)
         cdef:
             uint32_t i, j, k
-            vector[Header] subheaders = vector[Header]()
-            vector[Interval] sublists = self.sublists
-            vector[Interval] intervals = self.intervals
             uint32_t nlists = self.nlists
             uint32_t nsub = self.nsub
 
         i, j = 0, 0
-        for i in range(len(intervals)):
-            if intervals[i].sublist != -2:
+        for i in range(len(self.intervals)):
+            print("i", i)
+            print(self.intervals[i].sublist)
+            if self.intervals[i].sublist != -2:
                 if j < i:
-                    intervals[j] = intervals[i]
+                    self.intervals[j] = self.intervals[i]
                     j += 1
 
         k = 0
         for k in range(0, nsub):
-            intervals[j + k] = sublists[k]
+            self.intervals[j + k] = self.sublists[k]
 
         for i in range(nlists):
-
-            subheaders[i].start += j
+            self.subheaders[i].start += j
 
         self.ntop = j
