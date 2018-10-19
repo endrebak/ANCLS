@@ -2,12 +2,14 @@
 #include <stdint.h>
 
 
-typedef struct {
+struct Interval {
   uint32_t start;
   uint32_t end;
   uint32_t index;
   int32_t sublist;
-} Interval;
+
+  Interval(): sublist(-1) {}
+};
 
 
 typedef struct {

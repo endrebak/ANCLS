@@ -48,6 +48,7 @@ cdef class NCLS:
 
         cdef:
             uint32_t i
+            uint32_t ntop # number intervals in main list
             uint32_t nsub # number intervals not in main list
             uint32_t nlists # number sublists that together contain all intervals in nsub
             length = len(starts)
@@ -62,8 +63,10 @@ cdef class NCLS:
             intervals[i] = interval
 
         self.intervals = intervals
+        print("first sort")
         self.sort_on_starts_then_longest()
-        self.nsub = self._add_parents_inplace()
+        print("add parents")
+        self.nsub = self.add_parents_inplace()
 
         if self.nsub > 0:
 
@@ -72,7 +75,7 @@ cdef class NCLS:
 
             self.create_sublist_header()
 
-            remove_sublists(intervals, sublists, subheaders, nlists, nsub)
+            self.remove_sublists()
 
 
 
@@ -87,7 +90,7 @@ cdef class NCLS:
         stdsort(sublists.begin(), sublists.end(), sublists_then_start)
 
 
-    def _add_parents_inplace(self):
+    def add_parents_inplace(self):
         cdef:
             uint32_t nsub
             int32_t parent
@@ -105,6 +108,8 @@ cdef class NCLS:
             while i < length and parent >= 0: # TOP LEVEL LIST SCAN
                 same_or_not_contained = (intervals[i].end > intervals[parent].end) \
                     or (intervals[i].end == intervals[parent].end and intervals[i].start == intervals[parent].start)
+
+                print("same_or_not_contained", same_or_not_contained)
                 if same_or_not_contained:
                     parent = intervals[parent].sublist # all are -1 on instantiation
                 else:
@@ -167,39 +172,36 @@ cdef class NCLS:
 
             subheaders[k].length += 1
 
-            intervals[j].start = -1 # mark for deletion
+            intervals[j].sublist = -2 # mark for deletion
 
 
         self.sublists = sublists
 
 
-    def remove_sublists(intervals, sublists, subheaders, nlist, nsub):
+    def remove_sublists(self):
 
         # print("intervals 1", intervals)
+        cdef:
+            uint32_t i, j, k
+            vector[Header] subheaders = vector[Header]()
+            vector[Interval] sublists = self.sublists
+            vector[Interval] intervals = self.intervals
+            uint32_t nlists = self.nlists
+            uint32_t nsub = self.nsub
+
         i, j = 0, 0
         for i in range(len(intervals)):
-            if intervals[i].start != -1:
+            if intervals[i].sublist != -2:
                 if j < i:
                     intervals[j] = intervals[i]
                     j += 1
 
-        # print("intervals 2", intervals)
-
+        k = 0
         for k in range(0, nsub):
-
-            # print("k", k)
-            # print("j", j)
-            # print("intervals", intervals)
             intervals[j + k] = sublists[k]
 
-        for i in range(nlist):
+        for i in range(nlists):
 
-            # print("in range nlist. j is ", j, "and start is ", subheaders[i].start)
             subheaders[i].start += j
-            # print("in range nlist. j is ", j, "and start is ", subheaders[i].start)
 
-        # subheaders = subheaders[:j]
-
-        # print("intervals 3", intervals)
-
-        return j
+        self.ntop = j
