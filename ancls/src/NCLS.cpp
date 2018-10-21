@@ -1672,20 +1672,17 @@ static void __Pyx_CppExn2PyErr() {
 }
 #endif
 
+/* CIntToPy.proto */
+static CYTHON_INLINE PyObject* __Pyx_PyInt_From_int32_t(int32_t value);
+
+struct __pyx_t_5ancls_3src_4NCLS_Interval;
+static PyObject* __pyx_convert__to_py_struct____pyx_t_5ancls_3src_4NCLS_Interval(struct __pyx_t_5ancls_3src_4NCLS_Interval s);
 /* Print.proto */
 static int __Pyx_Print(PyObject*, PyObject *, int);
 #if CYTHON_COMPILING_IN_PYPY || PY_MAJOR_VERSION >= 3
 static PyObject* __pyx_print = 0;
 static PyObject* __pyx_print_kwargs = 0;
 #endif
-
-/* CIntToPy.proto */
-static CYTHON_INLINE PyObject* __Pyx_PyInt_From_int32_t(int32_t value);
-
-struct __pyx_t_5ancls_3src_4NCLS_Interval;
-static PyObject* __pyx_convert__to_py_struct____pyx_t_5ancls_3src_4NCLS_Interval(struct __pyx_t_5ancls_3src_4NCLS_Interval s);
-/* CIntToPy.proto */
-static CYTHON_INLINE PyObject* __Pyx_PyInt_From_long(long value);
 
 /* MemviewSliceCopyTemplate.proto */
 static __Pyx_memviewslice
@@ -1700,11 +1697,11 @@ static CYTHON_INLINE uint32_t __Pyx_PyInt_As_uint32_t(PyObject *);
 /* CIntFromPy.proto */
 static CYTHON_INLINE int32_t __Pyx_PyInt_As_int32_t(PyObject *);
 
-/* PrintOne.proto */
-static int __Pyx_PrintOne(PyObject* stream, PyObject *o);
-
 /* CIntFromPy.proto */
 static CYTHON_INLINE long __Pyx_PyInt_As_long(PyObject *);
+
+/* PrintOne.proto */
+static int __Pyx_PrintOne(PyObject* stream, PyObject *o);
 
 /* CIntFromPy.proto */
 static CYTHON_INLINE size_t __Pyx_PyInt_As_size_t(PyObject *);
@@ -1714,6 +1711,9 @@ static CYTHON_INLINE int __Pyx_PyInt_As_int(PyObject *);
 
 /* CIntToPy.proto */
 static CYTHON_INLINE PyObject* __Pyx_PyInt_From_int(int value);
+
+/* CIntToPy.proto */
+static CYTHON_INLINE PyObject* __Pyx_PyInt_From_long(long value);
 
 /* CIntFromPy.proto */
 static CYTHON_INLINE char __Pyx_PyInt_As_char(PyObject *);
@@ -1827,13 +1827,11 @@ static const char __pyx_k_mode[] = "mode";
 static const char __pyx_k_name[] = "name";
 static const char __pyx_k_ndim[] = "ndim";
 static const char __pyx_k_pack[] = "pack";
-static const char __pyx_k_repr[] = "repr!";
 static const char __pyx_k_size[] = "size";
 static const char __pyx_k_step[] = "step";
 static const char __pyx_k_stop[] = "stop";
 static const char __pyx_k_test[] = "__test__";
 static const char __pyx_k_ASCII[] = "ASCII";
-static const char __pyx_k_Heyyo[] = "Heyyo!";
 static const char __pyx_k_class[] = "__class__";
 static const char __pyx_k_error[] = "error";
 static const char __pyx_k_flags[] = "flags";
@@ -1872,7 +1870,6 @@ static const char __pyx_k_pyx_result[] = "__pyx_result";
 static const char __pyx_k_pyx_vtable[] = "__pyx_vtable__";
 static const char __pyx_k_MemoryError[] = "MemoryError";
 static const char __pyx_k_PickleError[] = "PickleError";
-static const char __pyx_k_i_has_parent[] = "i: {} has parent {}";
 static const char __pyx_k_pyx_checksum[] = "__pyx_checksum";
 static const char __pyx_k_stringsource[] = "stringsource";
 static const char __pyx_k_pyx_getbuffer[] = "__pyx_getbuffer";
@@ -1881,28 +1878,21 @@ static const char __pyx_k_View_MemoryView[] = "View.MemoryView";
 static const char __pyx_k_allocate_buffer[] = "allocate_buffer";
 static const char __pyx_k_dtype_is_object[] = "dtype_is_object";
 static const char __pyx_k_pyx_PickleError[] = "__pyx_PickleError";
-static const char __pyx_k_remove_sublists[] = "remove sublists";
+static const char __pyx_k_remove_sublists[] = "remove_sublists";
 static const char __pyx_k_setstate_cython[] = "__setstate_cython__";
-static const char __pyx_k_sort_on_sublists[] = "sort on sublists";
 static const char __pyx_k_pyx_unpickle_Enum[] = "__pyx_unpickle_Enum";
-static const char __pyx_k_remove_sublists_2[] = "remove_sublists";
-static const char __pyx_k_set_headerindexes[] = "set headerindexes";
 static const char __pyx_k_cline_in_traceback[] = "cline_in_traceback";
 static const char __pyx_k_set_header_indexes[] = "set_header_indexes";
 static const char __pyx_k_strided_and_direct[] = "<strided and direct>";
 static const char __pyx_k_add_parents_inplace[] = "add_parents_inplace";
 static const char __pyx_k_strided_and_indirect[] = "<strided and indirect>";
 static const char __pyx_k_contiguous_and_direct[] = "<contiguous and direct>";
-static const char __pyx_k_create_sublist_header[] = "create sublist header";
-static const char __pyx_k_k_self_intervals_size[] = "k, self.intervals.size()";
+static const char __pyx_k_create_sublist_header[] = "create_sublist_header";
 static const char __pyx_k_MemoryView_of_r_object[] = "<MemoryView of %r object>";
-static const char __pyx_k_parent_for_interval_is[] = "parent for interval {} is {}";
 static const char __pyx_k_MemoryView_of_r_at_0x_x[] = "<MemoryView of %r at 0x%x>";
 static const char __pyx_k_contiguous_and_indirect[] = "<contiguous and indirect>";
-static const char __pyx_k_create_sublist_header_2[] = "create_sublist_header";
 static const char __pyx_k_Cannot_index_with_type_s[] = "Cannot index with type '%s'";
 static const char __pyx_k_Invalid_shape_in_axis_d_d[] = "Invalid shape in axis %d: %d.";
-static const char __pyx_k_Setting_parent_to_sublist[] = "Setting parent {} to sublist {}";
 static const char __pyx_k_itemsize_0_for_cython_array[] = "itemsize <= 0 for cython.array";
 static const char __pyx_k_sort_on_starts_then_longest[] = "sort_on_starts_then_longest";
 static const char __pyx_k_sort_on_sublists_then_starts[] = "sort_on_sublists_then_starts";
@@ -1929,7 +1919,6 @@ static PyObject *__pyx_kp_s_Cannot_create_writable_memory_vi;
 static PyObject *__pyx_kp_s_Cannot_index_with_type_s;
 static PyObject *__pyx_n_s_Ellipsis;
 static PyObject *__pyx_kp_s_Empty_shape_tuple_for_cython_arr;
-static PyObject *__pyx_kp_s_Heyyo;
 static PyObject *__pyx_kp_s_Incompatible_checksums_s_vs_0xb0;
 static PyObject *__pyx_n_s_IndexError;
 static PyObject *__pyx_kp_s_Indirect_dimensions_not_supporte;
@@ -1941,7 +1930,6 @@ static PyObject *__pyx_kp_s_MemoryView_of_r_object;
 static PyObject *__pyx_n_b_O;
 static PyObject *__pyx_kp_s_Out_of_bounds_on_buffer_access_a;
 static PyObject *__pyx_n_s_PickleError;
-static PyObject *__pyx_kp_s_Setting_parent_to_sublist;
 static PyObject *__pyx_n_s_TypeError;
 static PyObject *__pyx_kp_s_Unable_to_convert_item_to_object;
 static PyObject *__pyx_n_s_ValueError;
@@ -1955,8 +1943,7 @@ static PyObject *__pyx_n_s_class;
 static PyObject *__pyx_n_s_cline_in_traceback;
 static PyObject *__pyx_kp_s_contiguous_and_direct;
 static PyObject *__pyx_kp_s_contiguous_and_indirect;
-static PyObject *__pyx_kp_s_create_sublist_header;
-static PyObject *__pyx_n_s_create_sublist_header_2;
+static PyObject *__pyx_n_s_create_sublist_header;
 static PyObject *__pyx_n_s_dict;
 static PyObject *__pyx_n_s_dtype_is_object;
 static PyObject *__pyx_n_s_encode;
@@ -1972,14 +1959,12 @@ static PyObject *__pyx_n_u_fortran;
 static PyObject *__pyx_n_s_getstate;
 static PyObject *__pyx_kp_s_got_differing_extents_in_dimensi;
 static PyObject *__pyx_n_s_i;
-static PyObject *__pyx_kp_s_i_has_parent;
 static PyObject *__pyx_n_s_id;
 static PyObject *__pyx_n_s_ids;
 static PyObject *__pyx_n_s_import;
 static PyObject *__pyx_n_s_index;
 static PyObject *__pyx_n_s_itemsize;
 static PyObject *__pyx_kp_s_itemsize_0_for_cython_array;
-static PyObject *__pyx_kp_s_k_self_intervals_size;
 static PyObject *__pyx_n_s_main;
 static PyObject *__pyx_n_s_memview;
 static PyObject *__pyx_n_s_mode;
@@ -1991,7 +1976,6 @@ static PyObject *__pyx_kp_s_no_default___reduce___due_to_non;
 static PyObject *__pyx_n_s_numpy;
 static PyObject *__pyx_n_s_obj;
 static PyObject *__pyx_n_s_pack;
-static PyObject *__pyx_kp_s_parent_for_interval_is;
 static PyObject *__pyx_n_s_pickle;
 static PyObject *__pyx_n_s_print;
 static PyObject *__pyx_n_s_pyx_PickleError;
@@ -2006,17 +1990,13 @@ static PyObject *__pyx_n_s_range;
 static PyObject *__pyx_n_s_reduce;
 static PyObject *__pyx_n_s_reduce_cython;
 static PyObject *__pyx_n_s_reduce_ex;
-static PyObject *__pyx_kp_s_remove_sublists;
-static PyObject *__pyx_n_s_remove_sublists_2;
-static PyObject *__pyx_kp_s_repr;
+static PyObject *__pyx_n_s_remove_sublists;
 static PyObject *__pyx_n_s_set_header_indexes;
-static PyObject *__pyx_kp_s_set_headerindexes;
 static PyObject *__pyx_n_s_setstate;
 static PyObject *__pyx_n_s_setstate_cython;
 static PyObject *__pyx_n_s_shape;
 static PyObject *__pyx_n_s_size;
 static PyObject *__pyx_n_s_sort_on_starts_then_longest;
-static PyObject *__pyx_kp_s_sort_on_sublists;
 static PyObject *__pyx_n_s_sort_on_sublists_then_starts;
 static PyObject *__pyx_n_s_start;
 static PyObject *__pyx_n_s_starts;
@@ -2095,6 +2075,7 @@ static PyObject *__pyx_tp_new__memoryviewslice(PyTypeObject *t, PyObject *a, PyO
 static PyObject *__pyx_int_0;
 static PyObject *__pyx_int_1;
 static PyObject *__pyx_int_184977713;
+static PyObject *__pyx_int_4294967295;
 static PyObject *__pyx_int_neg_1;
 static PyObject *__pyx_tuple_;
 static PyObject *__pyx_tuple__2;
@@ -2647,25 +2628,16 @@ static int __pyx_pf_5ancls_3src_4NCLS_4NCLS___cinit__(struct __pyx_obj_5ancls_3s
  * 
  *         if self.nsub > 0:             # <<<<<<<<<<<<<<
  * 
- *             print("set headerindexes")
+ *             # print("set headerindexes")
  */
   __pyx_t_12 = ((__pyx_v_self->nsub > 0) != 0);
   if (__pyx_t_12) {
 
-    /* "ancls/src/NCLS.pyx":86
- *         if self.nsub > 0:
- * 
- *             print("set headerindexes")             # <<<<<<<<<<<<<<
- *             self.set_header_indexes()
- *             print("sort on sublists")
- */
-    if (__Pyx_PrintOne(0, __pyx_kp_s_set_headerindexes) < 0) __PYX_ERR(0, 86, __pyx_L1_error)
-
     /* "ancls/src/NCLS.pyx":87
  * 
- *             print("set headerindexes")
+ *             # print("set headerindexes")
  *             self.set_header_indexes()             # <<<<<<<<<<<<<<
- *             print("sort on sublists")
+ *             # print("sort on sublists")
  *             self.sort_on_sublists_then_starts()
  */
     __pyx_t_9 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_set_header_indexes); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 87, __pyx_L1_error)
@@ -2690,21 +2662,12 @@ static int __pyx_pf_5ancls_3src_4NCLS_4NCLS___cinit__(struct __pyx_obj_5ancls_3s
     __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-    /* "ancls/src/NCLS.pyx":88
- *             print("set headerindexes")
- *             self.set_header_indexes()
- *             print("sort on sublists")             # <<<<<<<<<<<<<<
- *             self.sort_on_sublists_then_starts()
- * 
- */
-    if (__Pyx_PrintOne(0, __pyx_kp_s_sort_on_sublists) < 0) __PYX_ERR(0, 88, __pyx_L1_error)
-
     /* "ancls/src/NCLS.pyx":89
  *             self.set_header_indexes()
- *             print("sort on sublists")
+ *             # print("sort on sublists")
  *             self.sort_on_sublists_then_starts()             # <<<<<<<<<<<<<<
  * 
- *             print("create sublist header")
+ *             # print("create sublist header")
  */
     __pyx_t_9 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_sort_on_sublists_then_starts); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 89, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
@@ -2728,23 +2691,14 @@ static int __pyx_pf_5ancls_3src_4NCLS_4NCLS___cinit__(struct __pyx_obj_5ancls_3s
     __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-    /* "ancls/src/NCLS.pyx":91
- *             self.sort_on_sublists_then_starts()
- * 
- *             print("create sublist header")             # <<<<<<<<<<<<<<
- *             self.create_sublist_header()
- * 
- */
-    if (__Pyx_PrintOne(0, __pyx_kp_s_create_sublist_header) < 0) __PYX_ERR(0, 91, __pyx_L1_error)
-
-    /* "ancls/src/NCLS.pyx":92
- * 
- *             print("create sublist header")
+    /* "ancls/src/NCLS.pyx":93
+ *             # print("create sublist header")
+ *             # print("before", list(self.intervals))
  *             self.create_sublist_header()             # <<<<<<<<<<<<<<
- * 
- *             print("remove sublists")
+ *             # print("last", list(self.intervals))
+ *             # print("last subheaders", list(self.subheaders))
  */
-    __pyx_t_9 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_create_sublist_header_2); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 92, __pyx_L1_error)
+    __pyx_t_9 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_create_sublist_header); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 93, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
     __pyx_t_10 = NULL;
     if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_9))) {
@@ -2757,32 +2711,23 @@ static int __pyx_pf_5ancls_3src_4NCLS_4NCLS___cinit__(struct __pyx_obj_5ancls_3s
       }
     }
     if (__pyx_t_10) {
-      __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_9, __pyx_t_10); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 92, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_9, __pyx_t_10); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 93, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
     } else {
-      __pyx_t_2 = __Pyx_PyObject_CallNoArg(__pyx_t_9); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 92, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_CallNoArg(__pyx_t_9); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 93, __pyx_L1_error)
     }
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-    /* "ancls/src/NCLS.pyx":94
- *             self.create_sublist_header()
+    /* "ancls/src/NCLS.pyx":98
  * 
- *             print("remove sublists")             # <<<<<<<<<<<<<<
- *             self.remove_sublists()
- * 
- */
-    if (__Pyx_PrintOne(0, __pyx_kp_s_remove_sublists) < 0) __PYX_ERR(0, 94, __pyx_L1_error)
-
-    /* "ancls/src/NCLS.pyx":95
- * 
- *             print("remove sublists")
+ *             # print("remove sublists")
  *             self.remove_sublists()             # <<<<<<<<<<<<<<
- * 
- *     def __str__(self):
+ *             # print("final", list(self.intervals))
+ *             # print("final", list(self.subheaders))
  */
-    __pyx_t_9 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_remove_sublists_2); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 95, __pyx_L1_error)
+    __pyx_t_9 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_remove_sublists); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 98, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
     __pyx_t_10 = NULL;
     if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_9))) {
@@ -2795,10 +2740,10 @@ static int __pyx_pf_5ancls_3src_4NCLS_4NCLS___cinit__(struct __pyx_obj_5ancls_3s
       }
     }
     if (__pyx_t_10) {
-      __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_9, __pyx_t_10); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 95, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_9, __pyx_t_10); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 98, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
     } else {
-      __pyx_t_2 = __Pyx_PyObject_CallNoArg(__pyx_t_9); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 95, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_CallNoArg(__pyx_t_9); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 98, __pyx_L1_error)
     }
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
@@ -2809,7 +2754,7 @@ static int __pyx_pf_5ancls_3src_4NCLS_4NCLS___cinit__(struct __pyx_obj_5ancls_3s
  * 
  *         if self.nsub > 0:             # <<<<<<<<<<<<<<
  * 
- *             print("set headerindexes")
+ *             # print("set headerindexes")
  */
   }
 
@@ -2839,12 +2784,12 @@ static int __pyx_pf_5ancls_3src_4NCLS_4NCLS___cinit__(struct __pyx_obj_5ancls_3s
   return __pyx_r;
 }
 
-/* "ancls/src/NCLS.pyx":97
- *             self.remove_sublists()
+/* "ancls/src/NCLS.pyx":102
+ *             # print("final", list(self.subheaders))
  * 
  *     def __str__(self):             # <<<<<<<<<<<<<<
  * 
- *         print("Heyyo!")
+ *         # print("Heyyo!")
  */
 
 /* Python wrapper */
@@ -2867,38 +2812,29 @@ static PyObject *__pyx_pf_5ancls_3src_4NCLS_4NCLS_2__str__(struct __pyx_obj_5anc
   PyObject *__pyx_t_2 = NULL;
   __Pyx_RefNannySetupContext("__str__", 0);
 
-  /* "ancls/src/NCLS.pyx":99
- *     def __str__(self):
+  /* "ancls/src/NCLS.pyx":105
  * 
- *         print("Heyyo!")             # <<<<<<<<<<<<<<
- *         return(str(self.intervals))
- * 
- */
-  if (__Pyx_PrintOne(0, __pyx_kp_s_Heyyo) < 0) __PYX_ERR(0, 99, __pyx_L1_error)
-
-  /* "ancls/src/NCLS.pyx":100
- * 
- *         print("Heyyo!")
+ *         # print("Heyyo!")
  *         return(str(self.intervals))             # <<<<<<<<<<<<<<
  * 
  * 
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_convert_vector_to_py_struct____pyx_t_5ancls_3src_4NCLS_Interval(__pyx_v_self->intervals); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 100, __pyx_L1_error)
+  __pyx_t_1 = __pyx_convert_vector_to_py_struct____pyx_t_5ancls_3src_4NCLS_Interval(__pyx_v_self->intervals); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 105, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_CallOneArg(((PyObject *)(&PyString_Type)), __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 100, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_CallOneArg(((PyObject *)(&PyString_Type)), __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 105, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_r = __pyx_t_2;
   __pyx_t_2 = 0;
   goto __pyx_L0;
 
-  /* "ancls/src/NCLS.pyx":97
- *             self.remove_sublists()
+  /* "ancls/src/NCLS.pyx":102
+ *             # print("final", list(self.subheaders))
  * 
  *     def __str__(self):             # <<<<<<<<<<<<<<
  * 
- *         print("Heyyo!")
+ *         # print("Heyyo!")
  */
 
   /* function exit code */
@@ -2913,12 +2849,12 @@ static PyObject *__pyx_pf_5ancls_3src_4NCLS_4NCLS_2__str__(struct __pyx_obj_5anc
   return __pyx_r;
 }
 
-/* "ancls/src/NCLS.pyx":103
+/* "ancls/src/NCLS.pyx":108
  * 
  * 
  *     def __repr__(self):             # <<<<<<<<<<<<<<
  * 
- *         print("repr!")
+ *         # print("repr!")
  */
 
 /* Python wrapper */
@@ -2941,38 +2877,29 @@ static PyObject *__pyx_pf_5ancls_3src_4NCLS_4NCLS_4__repr__(struct __pyx_obj_5an
   PyObject *__pyx_t_2 = NULL;
   __Pyx_RefNannySetupContext("__repr__", 0);
 
-  /* "ancls/src/NCLS.pyx":105
- *     def __repr__(self):
+  /* "ancls/src/NCLS.pyx":111
  * 
- *         print("repr!")             # <<<<<<<<<<<<<<
- *         return(str(self.intervals))
- * 
- */
-  if (__Pyx_PrintOne(0, __pyx_kp_s_repr) < 0) __PYX_ERR(0, 105, __pyx_L1_error)
-
-  /* "ancls/src/NCLS.pyx":106
- * 
- *         print("repr!")
+ *         # print("repr!")
  *         return(str(self.intervals))             # <<<<<<<<<<<<<<
  * 
  * 
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_convert_vector_to_py_struct____pyx_t_5ancls_3src_4NCLS_Interval(__pyx_v_self->intervals); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 106, __pyx_L1_error)
+  __pyx_t_1 = __pyx_convert_vector_to_py_struct____pyx_t_5ancls_3src_4NCLS_Interval(__pyx_v_self->intervals); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 111, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_CallOneArg(((PyObject *)(&PyString_Type)), __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 106, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_CallOneArg(((PyObject *)(&PyString_Type)), __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 111, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_r = __pyx_t_2;
   __pyx_t_2 = 0;
   goto __pyx_L0;
 
-  /* "ancls/src/NCLS.pyx":103
+  /* "ancls/src/NCLS.pyx":108
  * 
  * 
  *     def __repr__(self):             # <<<<<<<<<<<<<<
  * 
- *         print("repr!")
+ *         # print("repr!")
  */
 
   /* function exit code */
@@ -2987,7 +2914,7 @@ static PyObject *__pyx_pf_5ancls_3src_4NCLS_4NCLS_4__repr__(struct __pyx_obj_5an
   return __pyx_r;
 }
 
-/* "ancls/src/NCLS.pyx":111
+/* "ancls/src/NCLS.pyx":116
  * 
  * 
  *     def sort_on_starts_then_longest(self):             # <<<<<<<<<<<<<<
@@ -3013,7 +2940,7 @@ static PyObject *__pyx_pf_5ancls_3src_4NCLS_4NCLS_6sort_on_starts_then_longest(s
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("sort_on_starts_then_longest", 0);
 
-  /* "ancls/src/NCLS.pyx":112
+  /* "ancls/src/NCLS.pyx":117
  * 
  *     def sort_on_starts_then_longest(self):
  *         stdsort(self.intervals.begin(), self.intervals.end(), starts_then_longest)             # <<<<<<<<<<<<<<
@@ -3022,7 +2949,7 @@ static PyObject *__pyx_pf_5ancls_3src_4NCLS_4NCLS_6sort_on_starts_then_longest(s
  */
   std::sort<std::vector<struct __pyx_t_5ancls_3src_4NCLS_Interval> ::iterator,bool (struct __pyx_t_5ancls_3src_4NCLS_Interval const , struct __pyx_t_5ancls_3src_4NCLS_Interval const )>(__pyx_v_self->intervals.begin(), __pyx_v_self->intervals.end(), __pyx_f_5ancls_3src_4NCLS_starts_then_longest);
 
-  /* "ancls/src/NCLS.pyx":111
+  /* "ancls/src/NCLS.pyx":116
  * 
  * 
  *     def sort_on_starts_then_longest(self):             # <<<<<<<<<<<<<<
@@ -3037,7 +2964,7 @@ static PyObject *__pyx_pf_5ancls_3src_4NCLS_4NCLS_6sort_on_starts_then_longest(s
   return __pyx_r;
 }
 
-/* "ancls/src/NCLS.pyx":115
+/* "ancls/src/NCLS.pyx":120
  * 
  * 
  *     def sort_on_sublists_then_starts(self):             # <<<<<<<<<<<<<<
@@ -3065,7 +2992,7 @@ static PyObject *__pyx_pf_5ancls_3src_4NCLS_4NCLS_8sort_on_sublists_then_starts(
   std::vector<struct __pyx_t_5ancls_3src_4NCLS_Interval>  __pyx_t_1;
   __Pyx_RefNannySetupContext("sort_on_sublists_then_starts", 0);
 
-  /* "ancls/src/NCLS.pyx":117
+  /* "ancls/src/NCLS.pyx":122
  *     def sort_on_sublists_then_starts(self):
  *         cdef:
  *             vector[Interval] sublists = self.sublists             # <<<<<<<<<<<<<<
@@ -3075,7 +3002,7 @@ static PyObject *__pyx_pf_5ancls_3src_4NCLS_4NCLS_8sort_on_sublists_then_starts(
   __pyx_t_1 = __pyx_v_self->sublists;
   __pyx_v_sublists = __pyx_t_1;
 
-  /* "ancls/src/NCLS.pyx":119
+  /* "ancls/src/NCLS.pyx":124
  *             vector[Interval] sublists = self.sublists
  * 
  *         stdsort(sublists.begin(), sublists.end(), sublists_then_start)             # <<<<<<<<<<<<<<
@@ -3084,7 +3011,7 @@ static PyObject *__pyx_pf_5ancls_3src_4NCLS_4NCLS_8sort_on_sublists_then_starts(
  */
   std::sort<std::vector<struct __pyx_t_5ancls_3src_4NCLS_Interval> ::iterator,bool (struct __pyx_t_5ancls_3src_4NCLS_Interval const , struct __pyx_t_5ancls_3src_4NCLS_Interval const )>(__pyx_v_sublists.begin(), __pyx_v_sublists.end(), __pyx_f_5ancls_3src_4NCLS_sublists_then_start);
 
-  /* "ancls/src/NCLS.pyx":115
+  /* "ancls/src/NCLS.pyx":120
  * 
  * 
  *     def sort_on_sublists_then_starts(self):             # <<<<<<<<<<<<<<
@@ -3099,7 +3026,7 @@ static PyObject *__pyx_pf_5ancls_3src_4NCLS_4NCLS_8sort_on_sublists_then_starts(
   return __pyx_r;
 }
 
-/* "ancls/src/NCLS.pyx":122
+/* "ancls/src/NCLS.pyx":127
  * 
  * 
  *     def add_parents_inplace(self):             # <<<<<<<<<<<<<<
@@ -3128,20 +3055,14 @@ static PyObject *__pyx_pf_5ancls_3src_4NCLS_4NCLS_10add_parents_inplace(struct _
   bool __pyx_v_same_or_not_contained;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
-  PyObject *__pyx_t_1 = NULL;
-  PyObject *__pyx_t_2 = NULL;
-  int __pyx_t_3;
-  int __pyx_t_4;
-  bool __pyx_t_5;
-  int32_t __pyx_t_6;
-  PyObject *__pyx_t_7 = NULL;
-  PyObject *__pyx_t_8 = NULL;
-  PyObject *__pyx_t_9 = NULL;
-  int __pyx_t_10;
-  PyObject *__pyx_t_11 = NULL;
+  int __pyx_t_1;
+  int __pyx_t_2;
+  bool __pyx_t_3;
+  int32_t __pyx_t_4;
+  PyObject *__pyx_t_5 = NULL;
   __Pyx_RefNannySetupContext("add_parents_inplace", 0);
 
-  /* "ancls/src/NCLS.pyx":126
+  /* "ancls/src/NCLS.pyx":131
  *             uint32_t nsub
  *             int32_t parent
  *             int32_t i = 0             # <<<<<<<<<<<<<<
@@ -3150,7 +3071,7 @@ static PyObject *__pyx_pf_5ancls_3src_4NCLS_4NCLS_10add_parents_inplace(struct _
  */
   __pyx_v_i = 0;
 
-  /* "ancls/src/NCLS.pyx":127
+  /* "ancls/src/NCLS.pyx":132
  *             int32_t parent
  *             int32_t i = 0
  *             int32_t length = self.intervals.size()             # <<<<<<<<<<<<<<
@@ -3159,32 +3080,17 @@ static PyObject *__pyx_pf_5ancls_3src_4NCLS_4NCLS_10add_parents_inplace(struct _
  */
   __pyx_v_length = __pyx_v_self->intervals.size();
 
-  /* "ancls/src/NCLS.pyx":132
+  /* "ancls/src/NCLS.pyx":137
  *             Interval interval
  * 
  *         nsub = 0             # <<<<<<<<<<<<<<
  * 
- *         print(list(self.intervals))
+ *         # print(list(self.intervals))
  */
   __pyx_v_nsub = 0;
 
-  /* "ancls/src/NCLS.pyx":134
- *         nsub = 0
- * 
- *         print(list(self.intervals))             # <<<<<<<<<<<<<<
- * 
- *         i = 0
- */
-  __pyx_t_1 = __pyx_convert_vector_to_py_struct____pyx_t_5ancls_3src_4NCLS_Interval(__pyx_v_self->intervals); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 134, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = PySequence_List(__pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 134, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  if (__Pyx_PrintOne(0, __pyx_t_2) < 0) __PYX_ERR(0, 134, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-
-  /* "ancls/src/NCLS.pyx":136
- *         print(list(self.intervals))
+  /* "ancls/src/NCLS.pyx":141
+ *         # print(list(self.intervals))
  * 
  *         i = 0             # <<<<<<<<<<<<<<
  *         while (i < length):
@@ -3192,7 +3098,7 @@ static PyObject *__pyx_pf_5ancls_3src_4NCLS_4NCLS_10add_parents_inplace(struct _
  */
   __pyx_v_i = 0;
 
-  /* "ancls/src/NCLS.pyx":137
+  /* "ancls/src/NCLS.pyx":142
  * 
  *         i = 0
  *         while (i < length):             # <<<<<<<<<<<<<<
@@ -3200,10 +3106,10 @@ static PyObject *__pyx_pf_5ancls_3src_4NCLS_4NCLS_10add_parents_inplace(struct _
  *             i = parent + 1
  */
   while (1) {
-    __pyx_t_3 = ((__pyx_v_i < __pyx_v_length) != 0);
-    if (!__pyx_t_3) break;
+    __pyx_t_1 = ((__pyx_v_i < __pyx_v_length) != 0);
+    if (!__pyx_t_1) break;
 
-    /* "ancls/src/NCLS.pyx":138
+    /* "ancls/src/NCLS.pyx":143
  *         i = 0
  *         while (i < length):
  *             parent = i             # <<<<<<<<<<<<<<
@@ -3212,7 +3118,7 @@ static PyObject *__pyx_pf_5ancls_3src_4NCLS_4NCLS_10add_parents_inplace(struct _
  */
     __pyx_v_parent = __pyx_v_i;
 
-    /* "ancls/src/NCLS.pyx":139
+    /* "ancls/src/NCLS.pyx":144
  *         while (i < length):
  *             parent = i
  *             i = parent + 1             # <<<<<<<<<<<<<<
@@ -3221,7 +3127,7 @@ static PyObject *__pyx_pf_5ancls_3src_4NCLS_4NCLS_10add_parents_inplace(struct _
  */
     __pyx_v_i = (__pyx_v_parent + 1);
 
-    /* "ancls/src/NCLS.pyx":141
+    /* "ancls/src/NCLS.pyx":146
  *             i = parent + 1
  * 
  *             while i < length and parent >= 0: # TOP LEVEL LIST SCAN             # <<<<<<<<<<<<<<
@@ -3229,230 +3135,100 @@ static PyObject *__pyx_pf_5ancls_3src_4NCLS_4NCLS_10add_parents_inplace(struct _
  *                     or (self.intervals[i].end == self.intervals[parent].end and self.intervals[i].start == self.intervals[parent].start)
  */
     while (1) {
-      __pyx_t_4 = ((__pyx_v_i < __pyx_v_length) != 0);
-      if (__pyx_t_4) {
+      __pyx_t_2 = ((__pyx_v_i < __pyx_v_length) != 0);
+      if (__pyx_t_2) {
       } else {
-        __pyx_t_3 = __pyx_t_4;
+        __pyx_t_1 = __pyx_t_2;
         goto __pyx_L7_bool_binop_done;
       }
-      __pyx_t_4 = ((__pyx_v_parent >= 0) != 0);
-      __pyx_t_3 = __pyx_t_4;
+      __pyx_t_2 = ((__pyx_v_parent >= 0) != 0);
+      __pyx_t_1 = __pyx_t_2;
       __pyx_L7_bool_binop_done:;
-      if (!__pyx_t_3) break;
+      if (!__pyx_t_1) break;
 
-      /* "ancls/src/NCLS.pyx":142
+      /* "ancls/src/NCLS.pyx":147
  * 
  *             while i < length and parent >= 0: # TOP LEVEL LIST SCAN
  *                 same_or_not_contained = (self.intervals[i].end > self.intervals[parent].end) \             # <<<<<<<<<<<<<<
  *                     or (self.intervals[i].end == self.intervals[parent].end and self.intervals[i].start == self.intervals[parent].start)
  * 
  */
-      __pyx_t_3 = ((__pyx_v_self->intervals[__pyx_v_i]).end > (__pyx_v_self->intervals[__pyx_v_parent]).end);
-      if (!__pyx_t_3) {
+      __pyx_t_1 = ((__pyx_v_self->intervals[__pyx_v_i]).end > (__pyx_v_self->intervals[__pyx_v_parent]).end);
+      if (!__pyx_t_1) {
       } else {
-        __pyx_t_5 = __pyx_t_3;
+        __pyx_t_3 = __pyx_t_1;
         goto __pyx_L9_bool_binop_done;
       }
 
-      /* "ancls/src/NCLS.pyx":143
+      /* "ancls/src/NCLS.pyx":148
  *             while i < length and parent >= 0: # TOP LEVEL LIST SCAN
  *                 same_or_not_contained = (self.intervals[i].end > self.intervals[parent].end) \
  *                     or (self.intervals[i].end == self.intervals[parent].end and self.intervals[i].start == self.intervals[parent].start)             # <<<<<<<<<<<<<<
  * 
  *                 if same_or_not_contained:
  */
-      __pyx_t_3 = ((__pyx_v_self->intervals[__pyx_v_i]).end == (__pyx_v_self->intervals[__pyx_v_parent]).end);
-      if (__pyx_t_3) {
+      __pyx_t_1 = ((__pyx_v_self->intervals[__pyx_v_i]).end == (__pyx_v_self->intervals[__pyx_v_parent]).end);
+      if (__pyx_t_1) {
       } else {
-        __pyx_t_5 = __pyx_t_3;
+        __pyx_t_3 = __pyx_t_1;
         goto __pyx_L9_bool_binop_done;
       }
-      __pyx_t_3 = ((__pyx_v_self->intervals[__pyx_v_i]).start == (__pyx_v_self->intervals[__pyx_v_parent]).start);
-      __pyx_t_5 = __pyx_t_3;
+      __pyx_t_1 = ((__pyx_v_self->intervals[__pyx_v_i]).start == (__pyx_v_self->intervals[__pyx_v_parent]).start);
+      __pyx_t_3 = __pyx_t_1;
       __pyx_L9_bool_binop_done:;
-      __pyx_v_same_or_not_contained = __pyx_t_5;
+      __pyx_v_same_or_not_contained = __pyx_t_3;
 
-      /* "ancls/src/NCLS.pyx":145
+      /* "ancls/src/NCLS.pyx":150
  *                     or (self.intervals[i].end == self.intervals[parent].end and self.intervals[i].start == self.intervals[parent].start)
  * 
  *                 if same_or_not_contained:             # <<<<<<<<<<<<<<
  *                     parent = self.intervals[parent].sublist # all are -1 on instantiation
- *                     print("i: {} has parent {}".format(i, self.intervals[parent]))
+ *                     # # print("i: {} has parent {} {}".format(i, parent, self.intervals[parent]))
  */
-      __pyx_t_3 = (__pyx_v_same_or_not_contained != 0);
-      if (__pyx_t_3) {
+      __pyx_t_1 = (__pyx_v_same_or_not_contained != 0);
+      if (__pyx_t_1) {
 
-        /* "ancls/src/NCLS.pyx":146
+        /* "ancls/src/NCLS.pyx":151
  * 
  *                 if same_or_not_contained:
  *                     parent = self.intervals[parent].sublist # all are -1 on instantiation             # <<<<<<<<<<<<<<
- *                     print("i: {} has parent {}".format(i, self.intervals[parent]))
+ *                     # # print("i: {} has parent {} {}".format(i, parent, self.intervals[parent]))
  *                 else:
  */
-        __pyx_t_6 = (__pyx_v_self->intervals[__pyx_v_parent]).sublist;
-        __pyx_v_parent = __pyx_t_6;
+        __pyx_t_4 = (__pyx_v_self->intervals[__pyx_v_parent]).sublist;
+        __pyx_v_parent = __pyx_t_4;
 
-        /* "ancls/src/NCLS.pyx":147
- *                 if same_or_not_contained:
- *                     parent = self.intervals[parent].sublist # all are -1 on instantiation
- *                     print("i: {} has parent {}".format(i, self.intervals[parent]))             # <<<<<<<<<<<<<<
- *                 else:
- *                     self.intervals[i].sublist = parent # MARK AS CONTAINED IN parent
- */
-        __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_kp_s_i_has_parent, __pyx_n_s_format); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 147, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_1);
-        __pyx_t_7 = __Pyx_PyInt_From_int32_t(__pyx_v_i); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 147, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_7);
-        __pyx_t_8 = __pyx_convert__to_py_struct____pyx_t_5ancls_3src_4NCLS_Interval((__pyx_v_self->intervals[__pyx_v_parent])); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 147, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_8);
-        __pyx_t_9 = NULL;
-        __pyx_t_10 = 0;
-        if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_1))) {
-          __pyx_t_9 = PyMethod_GET_SELF(__pyx_t_1);
-          if (likely(__pyx_t_9)) {
-            PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_1);
-            __Pyx_INCREF(__pyx_t_9);
-            __Pyx_INCREF(function);
-            __Pyx_DECREF_SET(__pyx_t_1, function);
-            __pyx_t_10 = 1;
-          }
-        }
-        #if CYTHON_FAST_PYCALL
-        if (PyFunction_Check(__pyx_t_1)) {
-          PyObject *__pyx_temp[3] = {__pyx_t_9, __pyx_t_7, __pyx_t_8};
-          __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_10, 2+__pyx_t_10); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 147, __pyx_L1_error)
-          __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
-          __Pyx_GOTREF(__pyx_t_2);
-          __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-          __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-        } else
-        #endif
-        #if CYTHON_FAST_PYCCALL
-        if (__Pyx_PyFastCFunction_Check(__pyx_t_1)) {
-          PyObject *__pyx_temp[3] = {__pyx_t_9, __pyx_t_7, __pyx_t_8};
-          __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_10, 2+__pyx_t_10); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 147, __pyx_L1_error)
-          __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
-          __Pyx_GOTREF(__pyx_t_2);
-          __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-          __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-        } else
-        #endif
-        {
-          __pyx_t_11 = PyTuple_New(2+__pyx_t_10); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 147, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_11);
-          if (__pyx_t_9) {
-            __Pyx_GIVEREF(__pyx_t_9); PyTuple_SET_ITEM(__pyx_t_11, 0, __pyx_t_9); __pyx_t_9 = NULL;
-          }
-          __Pyx_GIVEREF(__pyx_t_7);
-          PyTuple_SET_ITEM(__pyx_t_11, 0+__pyx_t_10, __pyx_t_7);
-          __Pyx_GIVEREF(__pyx_t_8);
-          PyTuple_SET_ITEM(__pyx_t_11, 1+__pyx_t_10, __pyx_t_8);
-          __pyx_t_7 = 0;
-          __pyx_t_8 = 0;
-          __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_11, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 147, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_2);
-          __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
-        }
-        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-        if (__Pyx_PrintOne(0, __pyx_t_2) < 0) __PYX_ERR(0, 147, __pyx_L1_error)
-        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-
-        /* "ancls/src/NCLS.pyx":145
+        /* "ancls/src/NCLS.pyx":150
  *                     or (self.intervals[i].end == self.intervals[parent].end and self.intervals[i].start == self.intervals[parent].start)
  * 
  *                 if same_or_not_contained:             # <<<<<<<<<<<<<<
  *                     parent = self.intervals[parent].sublist # all are -1 on instantiation
- *                     print("i: {} has parent {}".format(i, self.intervals[parent]))
+ *                     # # print("i: {} has parent {} {}".format(i, parent, self.intervals[parent]))
  */
         goto __pyx_L12;
       }
 
-      /* "ancls/src/NCLS.pyx":149
- *                     print("i: {} has parent {}".format(i, self.intervals[parent]))
+      /* "ancls/src/NCLS.pyx":154
+ *                     # # print("i: {} has parent {} {}".format(i, parent, self.intervals[parent]))
  *                 else:
  *                     self.intervals[i].sublist = parent # MARK AS CONTAINED IN parent             # <<<<<<<<<<<<<<
- *                     print("i: {} has parent {}".format(i, self.intervals[parent]))
+ *                     # print("i: {} has parent {} {}".format(i, parent, self.intervals[parent]))
  *                     nsub += 1 # COUNT TOTAL #SUBLIST ENTRIES
  */
       /*else*/ {
         (__pyx_v_self->intervals[__pyx_v_i]).sublist = __pyx_v_parent;
 
-        /* "ancls/src/NCLS.pyx":150
- *                 else:
+        /* "ancls/src/NCLS.pyx":156
  *                     self.intervals[i].sublist = parent # MARK AS CONTAINED IN parent
- *                     print("i: {} has parent {}".format(i, self.intervals[parent]))             # <<<<<<<<<<<<<<
- *                     nsub += 1 # COUNT TOTAL #SUBLIST ENTRIES
- *                     parent = i # AND PUSH ONTO RECURSIVE STACK
- */
-        __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_kp_s_i_has_parent, __pyx_n_s_format); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 150, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_1);
-        __pyx_t_11 = __Pyx_PyInt_From_int32_t(__pyx_v_i); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 150, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_11);
-        __pyx_t_8 = __pyx_convert__to_py_struct____pyx_t_5ancls_3src_4NCLS_Interval((__pyx_v_self->intervals[__pyx_v_parent])); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 150, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_8);
-        __pyx_t_7 = NULL;
-        __pyx_t_10 = 0;
-        if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_1))) {
-          __pyx_t_7 = PyMethod_GET_SELF(__pyx_t_1);
-          if (likely(__pyx_t_7)) {
-            PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_1);
-            __Pyx_INCREF(__pyx_t_7);
-            __Pyx_INCREF(function);
-            __Pyx_DECREF_SET(__pyx_t_1, function);
-            __pyx_t_10 = 1;
-          }
-        }
-        #if CYTHON_FAST_PYCALL
-        if (PyFunction_Check(__pyx_t_1)) {
-          PyObject *__pyx_temp[3] = {__pyx_t_7, __pyx_t_11, __pyx_t_8};
-          __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_10, 2+__pyx_t_10); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 150, __pyx_L1_error)
-          __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
-          __Pyx_GOTREF(__pyx_t_2);
-          __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
-          __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-        } else
-        #endif
-        #if CYTHON_FAST_PYCCALL
-        if (__Pyx_PyFastCFunction_Check(__pyx_t_1)) {
-          PyObject *__pyx_temp[3] = {__pyx_t_7, __pyx_t_11, __pyx_t_8};
-          __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_10, 2+__pyx_t_10); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 150, __pyx_L1_error)
-          __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
-          __Pyx_GOTREF(__pyx_t_2);
-          __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
-          __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-        } else
-        #endif
-        {
-          __pyx_t_9 = PyTuple_New(2+__pyx_t_10); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 150, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_9);
-          if (__pyx_t_7) {
-            __Pyx_GIVEREF(__pyx_t_7); PyTuple_SET_ITEM(__pyx_t_9, 0, __pyx_t_7); __pyx_t_7 = NULL;
-          }
-          __Pyx_GIVEREF(__pyx_t_11);
-          PyTuple_SET_ITEM(__pyx_t_9, 0+__pyx_t_10, __pyx_t_11);
-          __Pyx_GIVEREF(__pyx_t_8);
-          PyTuple_SET_ITEM(__pyx_t_9, 1+__pyx_t_10, __pyx_t_8);
-          __pyx_t_11 = 0;
-          __pyx_t_8 = 0;
-          __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_9, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 150, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_2);
-          __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-        }
-        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-        if (__Pyx_PrintOne(0, __pyx_t_2) < 0) __PYX_ERR(0, 150, __pyx_L1_error)
-        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-
-        /* "ancls/src/NCLS.pyx":151
- *                     self.intervals[i].sublist = parent # MARK AS CONTAINED IN parent
- *                     print("i: {} has parent {}".format(i, self.intervals[parent]))
+ *                     # print("i: {} has parent {} {}".format(i, parent, self.intervals[parent]))
  *                     nsub += 1 # COUNT TOTAL #SUBLIST ENTRIES             # <<<<<<<<<<<<<<
  *                     parent = i # AND PUSH ONTO RECURSIVE STACK
  *                     i += 1 # ADVANCE TO NEXT INTERVAL
  */
         __pyx_v_nsub = (__pyx_v_nsub + 1);
 
-        /* "ancls/src/NCLS.pyx":152
- *                     print("i: {} has parent {}".format(i, self.intervals[parent]))
+        /* "ancls/src/NCLS.pyx":157
+ *                     # print("i: {} has parent {} {}".format(i, parent, self.intervals[parent]))
  *                     nsub += 1 # COUNT TOTAL #SUBLIST ENTRIES
  *                     parent = i # AND PUSH ONTO RECURSIVE STACK             # <<<<<<<<<<<<<<
  *                     i += 1 # ADVANCE TO NEXT INTERVAL
@@ -3460,7 +3236,7 @@ static PyObject *__pyx_pf_5ancls_3src_4NCLS_4NCLS_10add_parents_inplace(struct _
  */
         __pyx_v_parent = __pyx_v_i;
 
-        /* "ancls/src/NCLS.pyx":153
+        /* "ancls/src/NCLS.pyx":158
  *                     nsub += 1 # COUNT TOTAL #SUBLIST ENTRIES
  *                     parent = i # AND PUSH ONTO RECURSIVE STACK
  *                     i += 1 # ADVANCE TO NEXT INTERVAL             # <<<<<<<<<<<<<<
@@ -3473,7 +3249,7 @@ static PyObject *__pyx_pf_5ancls_3src_4NCLS_4NCLS_10add_parents_inplace(struct _
     }
   }
 
-  /* "ancls/src/NCLS.pyx":155
+  /* "ancls/src/NCLS.pyx":160
  *                     i += 1 # ADVANCE TO NEXT INTERVAL
  * 
  *         return nsub             # <<<<<<<<<<<<<<
@@ -3481,13 +3257,13 @@ static PyObject *__pyx_pf_5ancls_3src_4NCLS_4NCLS_10add_parents_inplace(struct _
  * 
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_2 = __Pyx_PyInt_From_uint32_t(__pyx_v_nsub); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 155, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __pyx_r = __pyx_t_2;
-  __pyx_t_2 = 0;
+  __pyx_t_5 = __Pyx_PyInt_From_uint32_t(__pyx_v_nsub); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 160, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_5);
+  __pyx_r = __pyx_t_5;
+  __pyx_t_5 = 0;
   goto __pyx_L0;
 
-  /* "ancls/src/NCLS.pyx":122
+  /* "ancls/src/NCLS.pyx":127
  * 
  * 
  *     def add_parents_inplace(self):             # <<<<<<<<<<<<<<
@@ -3497,12 +3273,7 @@ static PyObject *__pyx_pf_5ancls_3src_4NCLS_4NCLS_10add_parents_inplace(struct _
 
   /* function exit code */
   __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_XDECREF(__pyx_t_7);
-  __Pyx_XDECREF(__pyx_t_8);
-  __Pyx_XDECREF(__pyx_t_9);
-  __Pyx_XDECREF(__pyx_t_11);
+  __Pyx_XDECREF(__pyx_t_5);
   __Pyx_AddTraceback("ancls.src.NCLS.NCLS.add_parents_inplace", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
@@ -3511,7 +3282,7 @@ static PyObject *__pyx_pf_5ancls_3src_4NCLS_4NCLS_10add_parents_inplace(struct _
   return __pyx_r;
 }
 
-/* "ancls/src/NCLS.pyx":158
+/* "ancls/src/NCLS.pyx":163
  * 
  * 
  *     def set_header_indexes(self):             # <<<<<<<<<<<<<<
@@ -3547,17 +3318,10 @@ static PyObject *__pyx_pf_5ancls_3src_4NCLS_4NCLS_12set_header_indexes(struct __
   uint32_t __pyx_t_3;
   uint32_t __pyx_t_4;
   uint32_t __pyx_t_5;
-  PyObject *__pyx_t_6 = NULL;
-  PyObject *__pyx_t_7 = NULL;
-  PyObject *__pyx_t_8 = NULL;
-  PyObject *__pyx_t_9 = NULL;
-  PyObject *__pyx_t_10 = NULL;
-  int __pyx_t_11;
-  PyObject *__pyx_t_12 = NULL;
-  int __pyx_t_13;
+  int __pyx_t_6;
   __Pyx_RefNannySetupContext("set_header_indexes", 0);
 
-  /* "ancls/src/NCLS.pyx":161
+  /* "ancls/src/NCLS.pyx":166
  * 
  *         cdef:
  *             uint32_t nsub = self.nsub             # <<<<<<<<<<<<<<
@@ -3567,7 +3331,7 @@ static PyObject *__pyx_pf_5ancls_3src_4NCLS_4NCLS_12set_header_indexes(struct __
   __pyx_t_1 = __pyx_v_self->nsub;
   __pyx_v_nsub = __pyx_t_1;
 
-  /* "ancls/src/NCLS.pyx":162
+  /* "ancls/src/NCLS.pyx":167
  *         cdef:
  *             uint32_t nsub = self.nsub
  *             uint32_t i = 0             # <<<<<<<<<<<<<<
@@ -3576,7 +3340,7 @@ static PyObject *__pyx_pf_5ancls_3src_4NCLS_4NCLS_12set_header_indexes(struct __
  */
   __pyx_v_i = 0;
 
-  /* "ancls/src/NCLS.pyx":163
+  /* "ancls/src/NCLS.pyx":168
  *             uint32_t nsub = self.nsub
  *             uint32_t i = 0
  *             uint32_t j = 0             # <<<<<<<<<<<<<<
@@ -3585,7 +3349,7 @@ static PyObject *__pyx_pf_5ancls_3src_4NCLS_4NCLS_12set_header_indexes(struct __
  */
   __pyx_v_j = 0;
 
-  /* "ancls/src/NCLS.pyx":164
+  /* "ancls/src/NCLS.pyx":169
  *             uint32_t i = 0
  *             uint32_t j = 0
  *             uint32_t nlists = 0             # <<<<<<<<<<<<<<
@@ -3594,7 +3358,7 @@ static PyObject *__pyx_pf_5ancls_3src_4NCLS_4NCLS_12set_header_indexes(struct __
  */
   __pyx_v_nlists = 0;
 
-  /* "ancls/src/NCLS.pyx":166
+  /* "ancls/src/NCLS.pyx":171
  *             uint32_t nlists = 0
  *             int32_t parent
  *             vector[Interval] sublists = vector[Interval](self.nsub)             # <<<<<<<<<<<<<<
@@ -3605,11 +3369,11 @@ static PyObject *__pyx_pf_5ancls_3src_4NCLS_4NCLS_12set_header_indexes(struct __
     __pyx_t_2 = std::vector<struct __pyx_t_5ancls_3src_4NCLS_Interval> (__pyx_v_self->nsub);
   } catch(...) {
     __Pyx_CppExn2PyErr();
-    __PYX_ERR(0, 166, __pyx_L1_error)
+    __PYX_ERR(0, 171, __pyx_L1_error)
   }
   __pyx_v_sublists = __pyx_t_2;
 
-  /* "ancls/src/NCLS.pyx":168
+  /* "ancls/src/NCLS.pyx":173
  *             vector[Interval] sublists = vector[Interval](self.nsub)
  *             # vector[Interval] self.intervals
  *             uint32_t length = self.intervals.size()             # <<<<<<<<<<<<<<
@@ -3618,105 +3382,40 @@ static PyObject *__pyx_pf_5ancls_3src_4NCLS_4NCLS_12set_header_indexes(struct __
  */
   __pyx_v_length = __pyx_v_self->intervals.size();
 
-  /* "ancls/src/NCLS.pyx":170
+  /* "ancls/src/NCLS.pyx":175
  *             uint32_t length = self.intervals.size()
  * 
  *         for i in range(length):             # <<<<<<<<<<<<<<
  *             parent = self.intervals[i].sublist
- *             print("parent for interval {} is {}".format(i, parent))
+ *             # print("parent for interval {} is {}".format(i, parent))
  */
   __pyx_t_3 = __pyx_v_length;
   __pyx_t_4 = __pyx_t_3;
   for (__pyx_t_5 = 0; __pyx_t_5 < __pyx_t_4; __pyx_t_5+=1) {
     __pyx_v_i = __pyx_t_5;
 
-    /* "ancls/src/NCLS.pyx":171
+    /* "ancls/src/NCLS.pyx":176
  * 
  *         for i in range(length):
  *             parent = self.intervals[i].sublist             # <<<<<<<<<<<<<<
- *             print("parent for interval {} is {}".format(i, parent))
+ *             # print("parent for interval {} is {}".format(i, parent))
  *             if parent >= 0:
  */
     __pyx_t_1 = (__pyx_v_self->intervals[__pyx_v_i]).sublist;
     __pyx_v_parent = __pyx_t_1;
 
-    /* "ancls/src/NCLS.pyx":172
- *         for i in range(length):
+    /* "ancls/src/NCLS.pyx":178
  *             parent = self.intervals[i].sublist
- *             print("parent for interval {} is {}".format(i, parent))             # <<<<<<<<<<<<<<
- *             if parent >= 0:
- *                 sublists[j].start = i
- */
-    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_kp_s_parent_for_interval_is, __pyx_n_s_format); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 172, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_8 = __Pyx_PyInt_From_uint32_t(__pyx_v_i); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 172, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_8);
-    __pyx_t_9 = __Pyx_PyInt_From_int32_t(__pyx_v_parent); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 172, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_9);
-    __pyx_t_10 = NULL;
-    __pyx_t_11 = 0;
-    if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_7))) {
-      __pyx_t_10 = PyMethod_GET_SELF(__pyx_t_7);
-      if (likely(__pyx_t_10)) {
-        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_7);
-        __Pyx_INCREF(__pyx_t_10);
-        __Pyx_INCREF(function);
-        __Pyx_DECREF_SET(__pyx_t_7, function);
-        __pyx_t_11 = 1;
-      }
-    }
-    #if CYTHON_FAST_PYCALL
-    if (PyFunction_Check(__pyx_t_7)) {
-      PyObject *__pyx_temp[3] = {__pyx_t_10, __pyx_t_8, __pyx_t_9};
-      __pyx_t_6 = __Pyx_PyFunction_FastCall(__pyx_t_7, __pyx_temp+1-__pyx_t_11, 2+__pyx_t_11); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 172, __pyx_L1_error)
-      __Pyx_XDECREF(__pyx_t_10); __pyx_t_10 = 0;
-      __Pyx_GOTREF(__pyx_t_6);
-      __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-      __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-    } else
-    #endif
-    #if CYTHON_FAST_PYCCALL
-    if (__Pyx_PyFastCFunction_Check(__pyx_t_7)) {
-      PyObject *__pyx_temp[3] = {__pyx_t_10, __pyx_t_8, __pyx_t_9};
-      __pyx_t_6 = __Pyx_PyCFunction_FastCall(__pyx_t_7, __pyx_temp+1-__pyx_t_11, 2+__pyx_t_11); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 172, __pyx_L1_error)
-      __Pyx_XDECREF(__pyx_t_10); __pyx_t_10 = 0;
-      __Pyx_GOTREF(__pyx_t_6);
-      __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-      __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-    } else
-    #endif
-    {
-      __pyx_t_12 = PyTuple_New(2+__pyx_t_11); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 172, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_12);
-      if (__pyx_t_10) {
-        __Pyx_GIVEREF(__pyx_t_10); PyTuple_SET_ITEM(__pyx_t_12, 0, __pyx_t_10); __pyx_t_10 = NULL;
-      }
-      __Pyx_GIVEREF(__pyx_t_8);
-      PyTuple_SET_ITEM(__pyx_t_12, 0+__pyx_t_11, __pyx_t_8);
-      __Pyx_GIVEREF(__pyx_t_9);
-      PyTuple_SET_ITEM(__pyx_t_12, 1+__pyx_t_11, __pyx_t_9);
-      __pyx_t_8 = 0;
-      __pyx_t_9 = 0;
-      __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_7, __pyx_t_12, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 172, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_6);
-      __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-    }
-    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    if (__Pyx_PrintOne(0, __pyx_t_6) < 0) __PYX_ERR(0, 172, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-
-    /* "ancls/src/NCLS.pyx":173
- *             parent = self.intervals[i].sublist
- *             print("parent for interval {} is {}".format(i, parent))
+ *             # print("parent for interval {} is {}".format(i, parent))
  *             if parent >= 0:             # <<<<<<<<<<<<<<
  *                 sublists[j].start = i
  *                 sublists[j].sublist = parent
  */
-    __pyx_t_13 = ((__pyx_v_parent >= 0) != 0);
-    if (__pyx_t_13) {
+    __pyx_t_6 = ((__pyx_v_parent >= 0) != 0);
+    if (__pyx_t_6) {
 
-      /* "ancls/src/NCLS.pyx":174
- *             print("parent for interval {} is {}".format(i, parent))
+      /* "ancls/src/NCLS.pyx":179
+ *             # print("parent for interval {} is {}".format(i, parent))
  *             if parent >= 0:
  *                 sublists[j].start = i             # <<<<<<<<<<<<<<
  *                 sublists[j].sublist = parent
@@ -3724,7 +3423,7 @@ static PyObject *__pyx_pf_5ancls_3src_4NCLS_4NCLS_12set_header_indexes(struct __
  */
       (__pyx_v_sublists[__pyx_v_j]).start = __pyx_v_i;
 
-      /* "ancls/src/NCLS.pyx":175
+      /* "ancls/src/NCLS.pyx":180
  *             if parent >= 0:
  *                 sublists[j].start = i
  *                 sublists[j].sublist = parent             # <<<<<<<<<<<<<<
@@ -3733,7 +3432,7 @@ static PyObject *__pyx_pf_5ancls_3src_4NCLS_4NCLS_12set_header_indexes(struct __
  */
       (__pyx_v_sublists[__pyx_v_j]).sublist = __pyx_v_parent;
 
-      /* "ancls/src/NCLS.pyx":176
+      /* "ancls/src/NCLS.pyx":181
  *                 sublists[j].start = i
  *                 sublists[j].sublist = parent
  *                 j += 1             # <<<<<<<<<<<<<<
@@ -3742,92 +3441,27 @@ static PyObject *__pyx_pf_5ancls_3src_4NCLS_4NCLS_12set_header_indexes(struct __
  */
       __pyx_v_j = (__pyx_v_j + 1);
 
-      /* "ancls/src/NCLS.pyx":178
+      /* "ancls/src/NCLS.pyx":183
  *                 j += 1
  * 
  *                 if self.intervals[parent].sublist < 0:             # <<<<<<<<<<<<<<
- *                     print("Setting parent {} to sublist {}".format(parent, nlists + 1))
+ *                     # print("Setting parent {} to sublist {}".format(parent, nlists + 1))
  *                     self.intervals[parent].sublist = nlists
  */
-      __pyx_t_13 = (((__pyx_v_self->intervals[__pyx_v_parent]).sublist < 0) != 0);
-      if (__pyx_t_13) {
+      __pyx_t_6 = (((__pyx_v_self->intervals[__pyx_v_parent]).sublist < 0) != 0);
+      if (__pyx_t_6) {
 
-        /* "ancls/src/NCLS.pyx":179
- * 
+        /* "ancls/src/NCLS.pyx":185
  *                 if self.intervals[parent].sublist < 0:
- *                     print("Setting parent {} to sublist {}".format(parent, nlists + 1))             # <<<<<<<<<<<<<<
- *                     self.intervals[parent].sublist = nlists
- *                     nlists += 1
- */
-        __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_kp_s_Setting_parent_to_sublist, __pyx_n_s_format); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 179, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_7);
-        __pyx_t_12 = __Pyx_PyInt_From_int32_t(__pyx_v_parent); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 179, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_12);
-        __pyx_t_9 = __Pyx_PyInt_From_long((__pyx_v_nlists + 1)); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 179, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_9);
-        __pyx_t_8 = NULL;
-        __pyx_t_11 = 0;
-        if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_7))) {
-          __pyx_t_8 = PyMethod_GET_SELF(__pyx_t_7);
-          if (likely(__pyx_t_8)) {
-            PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_7);
-            __Pyx_INCREF(__pyx_t_8);
-            __Pyx_INCREF(function);
-            __Pyx_DECREF_SET(__pyx_t_7, function);
-            __pyx_t_11 = 1;
-          }
-        }
-        #if CYTHON_FAST_PYCALL
-        if (PyFunction_Check(__pyx_t_7)) {
-          PyObject *__pyx_temp[3] = {__pyx_t_8, __pyx_t_12, __pyx_t_9};
-          __pyx_t_6 = __Pyx_PyFunction_FastCall(__pyx_t_7, __pyx_temp+1-__pyx_t_11, 2+__pyx_t_11); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 179, __pyx_L1_error)
-          __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
-          __Pyx_GOTREF(__pyx_t_6);
-          __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-          __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-        } else
-        #endif
-        #if CYTHON_FAST_PYCCALL
-        if (__Pyx_PyFastCFunction_Check(__pyx_t_7)) {
-          PyObject *__pyx_temp[3] = {__pyx_t_8, __pyx_t_12, __pyx_t_9};
-          __pyx_t_6 = __Pyx_PyCFunction_FastCall(__pyx_t_7, __pyx_temp+1-__pyx_t_11, 2+__pyx_t_11); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 179, __pyx_L1_error)
-          __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
-          __Pyx_GOTREF(__pyx_t_6);
-          __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-          __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-        } else
-        #endif
-        {
-          __pyx_t_10 = PyTuple_New(2+__pyx_t_11); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 179, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_10);
-          if (__pyx_t_8) {
-            __Pyx_GIVEREF(__pyx_t_8); PyTuple_SET_ITEM(__pyx_t_10, 0, __pyx_t_8); __pyx_t_8 = NULL;
-          }
-          __Pyx_GIVEREF(__pyx_t_12);
-          PyTuple_SET_ITEM(__pyx_t_10, 0+__pyx_t_11, __pyx_t_12);
-          __Pyx_GIVEREF(__pyx_t_9);
-          PyTuple_SET_ITEM(__pyx_t_10, 1+__pyx_t_11, __pyx_t_9);
-          __pyx_t_12 = 0;
-          __pyx_t_9 = 0;
-          __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_7, __pyx_t_10, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 179, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_6);
-          __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-        }
-        __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-        if (__Pyx_PrintOne(0, __pyx_t_6) < 0) __PYX_ERR(0, 179, __pyx_L1_error)
-        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-
-        /* "ancls/src/NCLS.pyx":180
- *                 if self.intervals[parent].sublist < 0:
- *                     print("Setting parent {} to sublist {}".format(parent, nlists + 1))
+ *                     # print("Setting parent {} to sublist {}".format(parent, nlists + 1))
  *                     self.intervals[parent].sublist = nlists             # <<<<<<<<<<<<<<
  *                     nlists += 1
  * 
  */
         (__pyx_v_self->intervals[__pyx_v_parent]).sublist = __pyx_v_nlists;
 
-        /* "ancls/src/NCLS.pyx":181
- *                     print("Setting parent {} to sublist {}".format(parent, nlists + 1))
+        /* "ancls/src/NCLS.pyx":186
+ *                     # print("Setting parent {} to sublist {}".format(parent, nlists + 1))
  *                     self.intervals[parent].sublist = nlists
  *                     nlists += 1             # <<<<<<<<<<<<<<
  * 
@@ -3835,25 +3469,25 @@ static PyObject *__pyx_pf_5ancls_3src_4NCLS_4NCLS_12set_header_indexes(struct __
  */
         __pyx_v_nlists = (__pyx_v_nlists + 1);
 
-        /* "ancls/src/NCLS.pyx":178
+        /* "ancls/src/NCLS.pyx":183
  *                 j += 1
  * 
  *                 if self.intervals[parent].sublist < 0:             # <<<<<<<<<<<<<<
- *                     print("Setting parent {} to sublist {}".format(parent, nlists + 1))
+ *                     # print("Setting parent {} to sublist {}".format(parent, nlists + 1))
  *                     self.intervals[parent].sublist = nlists
  */
       }
 
-      /* "ancls/src/NCLS.pyx":173
+      /* "ancls/src/NCLS.pyx":178
  *             parent = self.intervals[i].sublist
- *             print("parent for interval {} is {}".format(i, parent))
+ *             # print("parent for interval {} is {}".format(i, parent))
  *             if parent >= 0:             # <<<<<<<<<<<<<<
  *                 sublists[j].start = i
  *                 sublists[j].sublist = parent
  */
     }
 
-    /* "ancls/src/NCLS.pyx":183
+    /* "ancls/src/NCLS.pyx":188
  *                     nlists += 1
  * 
  *             self.intervals[i].sublist = -1             # <<<<<<<<<<<<<<
@@ -3863,7 +3497,7 @@ static PyObject *__pyx_pf_5ancls_3src_4NCLS_4NCLS_12set_header_indexes(struct __
     (__pyx_v_self->intervals[__pyx_v_i]).sublist = -1;
   }
 
-  /* "ancls/src/NCLS.pyx":185
+  /* "ancls/src/NCLS.pyx":190
  *             self.intervals[i].sublist = -1
  * 
  *         self.nlists = nlists             # <<<<<<<<<<<<<<
@@ -3872,7 +3506,7 @@ static PyObject *__pyx_pf_5ancls_3src_4NCLS_4NCLS_12set_header_indexes(struct __
  */
   __pyx_v_self->nlists = __pyx_v_nlists;
 
-  /* "ancls/src/NCLS.pyx":186
+  /* "ancls/src/NCLS.pyx":191
  * 
  *         self.nlists = nlists
  *         self.sublists = sublists             # <<<<<<<<<<<<<<
@@ -3881,7 +3515,7 @@ static PyObject *__pyx_pf_5ancls_3src_4NCLS_4NCLS_12set_header_indexes(struct __
  */
   __pyx_v_self->sublists = __pyx_v_sublists;
 
-  /* "ancls/src/NCLS.pyx":158
+  /* "ancls/src/NCLS.pyx":163
  * 
  * 
  *     def set_header_indexes(self):             # <<<<<<<<<<<<<<
@@ -3893,12 +3527,6 @@ static PyObject *__pyx_pf_5ancls_3src_4NCLS_4NCLS_12set_header_indexes(struct __
   __pyx_r = Py_None; __Pyx_INCREF(Py_None);
   goto __pyx_L0;
   __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_6);
-  __Pyx_XDECREF(__pyx_t_7);
-  __Pyx_XDECREF(__pyx_t_8);
-  __Pyx_XDECREF(__pyx_t_9);
-  __Pyx_XDECREF(__pyx_t_10);
-  __Pyx_XDECREF(__pyx_t_12);
   __Pyx_AddTraceback("ancls.src.NCLS.NCLS.set_header_indexes", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
@@ -3907,7 +3535,7 @@ static PyObject *__pyx_pf_5ancls_3src_4NCLS_4NCLS_12set_header_indexes(struct __
   return __pyx_r;
 }
 
-/* "ancls/src/NCLS.pyx":189
+/* "ancls/src/NCLS.pyx":194
  * 
  * 
  *     def create_sublist_header(self):             # <<<<<<<<<<<<<<
@@ -3944,13 +3572,10 @@ static PyObject *__pyx_pf_5ancls_3src_4NCLS_4NCLS_14create_sublist_header(struct
   uint32_t __pyx_t_4;
   struct __pyx_t_5ancls_3src_4NCLS_Header __pyx_t_5;
   uint32_t __pyx_t_6;
-  PyObject *__pyx_t_7 = NULL;
-  PyObject *__pyx_t_8 = NULL;
-  PyObject *__pyx_t_9 = NULL;
-  int __pyx_t_10;
+  int __pyx_t_7;
   __Pyx_RefNannySetupContext("create_sublist_header", 0);
 
-  /* "ancls/src/NCLS.pyx":193
+  /* "ancls/src/NCLS.pyx":198
  *         cdef:
  *             uint32_t i, j
  *             uint32_t nsub = self.nsub             # <<<<<<<<<<<<<<
@@ -3960,7 +3585,7 @@ static PyObject *__pyx_pf_5ancls_3src_4NCLS_4NCLS_14create_sublist_header(struct
   __pyx_t_1 = __pyx_v_self->nsub;
   __pyx_v_nsub = __pyx_t_1;
 
-  /* "ancls/src/NCLS.pyx":194
+  /* "ancls/src/NCLS.pyx":199
  *             uint32_t i, j
  *             uint32_t nsub = self.nsub
  *             uint32_t nlists = self.nlists             # <<<<<<<<<<<<<<
@@ -3970,7 +3595,7 @@ static PyObject *__pyx_pf_5ancls_3src_4NCLS_4NCLS_14create_sublist_header(struct
   __pyx_t_1 = __pyx_v_self->nlists;
   __pyx_v_nlists = __pyx_t_1;
 
-  /* "ancls/src/NCLS.pyx":196
+  /* "ancls/src/NCLS.pyx":201
  *             uint32_t nlists = self.nlists
  *             int32_t parent, k
  *             uint32_t zero = 0             # <<<<<<<<<<<<<<
@@ -3979,7 +3604,7 @@ static PyObject *__pyx_pf_5ancls_3src_4NCLS_4NCLS_14create_sublist_header(struct
  */
   __pyx_v_zero = 0;
 
-  /* "ancls/src/NCLS.pyx":198
+  /* "ancls/src/NCLS.pyx":203
  *             uint32_t zero = 0
  * 
  *         self.subheaders.resize(nlists)             # <<<<<<<<<<<<<<
@@ -3990,10 +3615,10 @@ static PyObject *__pyx_pf_5ancls_3src_4NCLS_4NCLS_14create_sublist_header(struct
     __pyx_v_self->subheaders.resize(__pyx_v_nlists);
   } catch(...) {
     __Pyx_CppExn2PyErr();
-    __PYX_ERR(0, 198, __pyx_L1_error)
+    __PYX_ERR(0, 203, __pyx_L1_error)
   }
 
-  /* "ancls/src/NCLS.pyx":199
+  /* "ancls/src/NCLS.pyx":204
  * 
  *         self.subheaders.resize(nlists)
  *         for i in range(nlists):             # <<<<<<<<<<<<<<
@@ -4005,7 +3630,7 @@ static PyObject *__pyx_pf_5ancls_3src_4NCLS_4NCLS_14create_sublist_header(struct
   for (__pyx_t_4 = 0; __pyx_t_4 < __pyx_t_3; __pyx_t_4+=1) {
     __pyx_v_i = __pyx_t_4;
 
-    /* "ancls/src/NCLS.pyx":200
+    /* "ancls/src/NCLS.pyx":205
  *         self.subheaders.resize(nlists)
  *         for i in range(nlists):
  *             self.subheaders[i] = [0, 0]             # <<<<<<<<<<<<<<
@@ -4017,7 +3642,7 @@ static PyObject *__pyx_pf_5ancls_3src_4NCLS_4NCLS_14create_sublist_header(struct
     (__pyx_v_self->subheaders[__pyx_v_i]) = __pyx_t_5;
   }
 
-  /* "ancls/src/NCLS.pyx":202
+  /* "ancls/src/NCLS.pyx":207
  *             self.subheaders[i] = [0, 0]
  * 
  *         for i in range(nsub):             # <<<<<<<<<<<<<<
@@ -4029,28 +3654,28 @@ static PyObject *__pyx_pf_5ancls_3src_4NCLS_4NCLS_14create_sublist_header(struct
   for (__pyx_t_4 = 0; __pyx_t_4 < __pyx_t_3; __pyx_t_4+=1) {
     __pyx_v_i = __pyx_t_4;
 
-    /* "ancls/src/NCLS.pyx":204
+    /* "ancls/src/NCLS.pyx":209
  *         for i in range(nsub):
  * 
  *             j = self.sublists[i].start             # <<<<<<<<<<<<<<
- *             # print("j, self.intervals.size()", j, self.intervals.size())
+ *             # # print("j, self.intervals.size()", j, self.intervals.size())
  *             parent = self.sublists[i].sublist
  */
     __pyx_t_6 = (__pyx_v_self->sublists[__pyx_v_i]).start;
     __pyx_v_j = __pyx_t_6;
 
-    /* "ancls/src/NCLS.pyx":206
+    /* "ancls/src/NCLS.pyx":211
  *             j = self.sublists[i].start
- *             # print("j, self.intervals.size()", j, self.intervals.size())
+ *             # # print("j, self.intervals.size()", j, self.intervals.size())
  *             parent = self.sublists[i].sublist             # <<<<<<<<<<<<<<
- *             # print("i, self.sublists.size()", i, self.sublists.size())
+ *             # # print("i, self.sublists.size()", i, self.sublists.size())
  * 
  */
     __pyx_t_1 = (__pyx_v_self->sublists[__pyx_v_i]).sublist;
     __pyx_v_parent = __pyx_t_1;
 
-    /* "ancls/src/NCLS.pyx":209
- *             # print("i, self.sublists.size()", i, self.sublists.size())
+    /* "ancls/src/NCLS.pyx":214
+ *             # # print("i, self.sublists.size()", i, self.sublists.size())
  * 
  *             self.sublists[i] = self.intervals[j]             # <<<<<<<<<<<<<<
  * 
@@ -4058,90 +3683,65 @@ static PyObject *__pyx_pf_5ancls_3src_4NCLS_4NCLS_14create_sublist_header(struct
  */
     (__pyx_v_self->sublists[__pyx_v_i]) = (__pyx_v_self->intervals[__pyx_v_j]);
 
-    /* "ancls/src/NCLS.pyx":216
- *             # print("parent", parent)
+    /* "ancls/src/NCLS.pyx":221
+ *             # # print("parent", parent)
  *             # raise
  *             k = self.intervals[parent].sublist             # <<<<<<<<<<<<<<
  * 
- *             print("k, self.intervals.size()", k, self.subheaders.size())
+ *             # print("k, self.intervals.size()", k, self.subheaders.size())
  */
     __pyx_t_1 = (__pyx_v_self->intervals[__pyx_v_parent]).sublist;
     __pyx_v_k = __pyx_t_1;
 
-    /* "ancls/src/NCLS.pyx":218
- *             k = self.intervals[parent].sublist
+    /* "ancls/src/NCLS.pyx":224
  * 
- *             print("k, self.intervals.size()", k, self.subheaders.size())             # <<<<<<<<<<<<<<
- *             if self.subheaders[k].length == zero:
- *                 self.subheaders[k].start = i
- */
-    __pyx_t_7 = __Pyx_PyInt_From_int32_t(__pyx_v_k); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 218, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_8 = __Pyx_PyInt_FromSize_t(__pyx_v_self->subheaders.size()); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 218, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_8);
-    __pyx_t_9 = PyTuple_New(3); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 218, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_9);
-    __Pyx_INCREF(__pyx_kp_s_k_self_intervals_size);
-    __Pyx_GIVEREF(__pyx_kp_s_k_self_intervals_size);
-    PyTuple_SET_ITEM(__pyx_t_9, 0, __pyx_kp_s_k_self_intervals_size);
-    __Pyx_GIVEREF(__pyx_t_7);
-    PyTuple_SET_ITEM(__pyx_t_9, 1, __pyx_t_7);
-    __Pyx_GIVEREF(__pyx_t_8);
-    PyTuple_SET_ITEM(__pyx_t_9, 2, __pyx_t_8);
-    __pyx_t_7 = 0;
-    __pyx_t_8 = 0;
-    if (__Pyx_PrintOne(0, __pyx_t_9) < 0) __PYX_ERR(0, 218, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-
-    /* "ancls/src/NCLS.pyx":219
- * 
- *             print("k, self.intervals.size()", k, self.subheaders.size())
+ *             # print("k, self.intervals.size()", k, self.subheaders.size())
  *             if self.subheaders[k].length == zero:             # <<<<<<<<<<<<<<
+ *                 # print("Setting k to i", k, i)
  *                 self.subheaders[k].start = i
- * 
  */
-    __pyx_t_10 = (((__pyx_v_self->subheaders[__pyx_v_k]).length == __pyx_v_zero) != 0);
-    if (__pyx_t_10) {
+    __pyx_t_7 = (((__pyx_v_self->subheaders[__pyx_v_k]).length == __pyx_v_zero) != 0);
+    if (__pyx_t_7) {
 
-      /* "ancls/src/NCLS.pyx":220
- *             print("k, self.intervals.size()", k, self.subheaders.size())
+      /* "ancls/src/NCLS.pyx":226
  *             if self.subheaders[k].length == zero:
+ *                 # print("Setting k to i", k, i)
  *                 self.subheaders[k].start = i             # <<<<<<<<<<<<<<
  * 
  *             self.subheaders[k].length += 1
  */
       (__pyx_v_self->subheaders[__pyx_v_k]).start = __pyx_v_i;
 
-      /* "ancls/src/NCLS.pyx":219
+      /* "ancls/src/NCLS.pyx":224
  * 
- *             print("k, self.intervals.size()", k, self.subheaders.size())
+ *             # print("k, self.intervals.size()", k, self.subheaders.size())
  *             if self.subheaders[k].length == zero:             # <<<<<<<<<<<<<<
+ *                 # print("Setting k to i", k, i)
  *                 self.subheaders[k].start = i
- * 
  */
     }
 
-    /* "ancls/src/NCLS.pyx":222
+    /* "ancls/src/NCLS.pyx":228
  *                 self.subheaders[k].start = i
  * 
  *             self.subheaders[k].length += 1             # <<<<<<<<<<<<<<
+ *             # print("i, k, s", i, k, self.subheaders[k])
  * 
- *             self.intervals[j].sublist = -2 # mark for deletion
  */
     __pyx_t_1 = __pyx_v_k;
     (__pyx_v_self->subheaders[__pyx_t_1]).length = ((__pyx_v_self->subheaders[__pyx_t_1]).length + 1);
 
-    /* "ancls/src/NCLS.pyx":224
- *             self.subheaders[k].length += 1
+    /* "ancls/src/NCLS.pyx":231
+ *             # print("i, k, s", i, k, self.subheaders[k])
  * 
- *             self.intervals[j].sublist = -2 # mark for deletion             # <<<<<<<<<<<<<<
+ *             self.intervals[j].index = 4294967295 # mark for deletion             # <<<<<<<<<<<<<<
  * 
  * 
  */
-    (__pyx_v_self->intervals[__pyx_v_j]).sublist = -2;
+    (__pyx_v_self->intervals[__pyx_v_j]).index = 0xFFFFFFFF;
   }
 
-  /* "ancls/src/NCLS.pyx":189
+  /* "ancls/src/NCLS.pyx":194
  * 
  * 
  *     def create_sublist_header(self):             # <<<<<<<<<<<<<<
@@ -4153,9 +3753,6 @@ static PyObject *__pyx_pf_5ancls_3src_4NCLS_4NCLS_14create_sublist_header(struct
   __pyx_r = Py_None; __Pyx_INCREF(Py_None);
   goto __pyx_L0;
   __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_7);
-  __Pyx_XDECREF(__pyx_t_8);
-  __Pyx_XDECREF(__pyx_t_9);
   __Pyx_AddTraceback("ancls.src.NCLS.NCLS.create_sublist_header", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
@@ -4164,7 +3761,7 @@ static PyObject *__pyx_pf_5ancls_3src_4NCLS_4NCLS_14create_sublist_header(struct
   return __pyx_r;
 }
 
-/* "ancls/src/NCLS.pyx":229
+/* "ancls/src/NCLS.pyx":236
  * 
  * 
  *     def remove_sublists(self):             # <<<<<<<<<<<<<<
@@ -4205,7 +3802,7 @@ static PyObject *__pyx_pf_5ancls_3src_4NCLS_4NCLS_16remove_sublists(struct __pyx
   uint32_t __pyx_t_10;
   __Pyx_RefNannySetupContext("remove_sublists", 0);
 
-  /* "ancls/src/NCLS.pyx":234
+  /* "ancls/src/NCLS.pyx":241
  *         cdef:
  *             uint32_t i, j, k
  *             uint32_t nlists = self.nlists             # <<<<<<<<<<<<<<
@@ -4215,7 +3812,7 @@ static PyObject *__pyx_pf_5ancls_3src_4NCLS_4NCLS_16remove_sublists(struct __pyx
   __pyx_t_1 = __pyx_v_self->nlists;
   __pyx_v_nlists = __pyx_t_1;
 
-  /* "ancls/src/NCLS.pyx":235
+  /* "ancls/src/NCLS.pyx":242
  *             uint32_t i, j, k
  *             uint32_t nlists = self.nlists
  *             uint32_t nsub = self.nsub             # <<<<<<<<<<<<<<
@@ -4225,7 +3822,7 @@ static PyObject *__pyx_pf_5ancls_3src_4NCLS_4NCLS_16remove_sublists(struct __pyx
   __pyx_t_1 = __pyx_v_self->nsub;
   __pyx_v_nsub = __pyx_t_1;
 
-  /* "ancls/src/NCLS.pyx":237
+  /* "ancls/src/NCLS.pyx":244
  *             uint32_t nsub = self.nsub
  * 
  *         i, j = 0, 0             # <<<<<<<<<<<<<<
@@ -4237,31 +3834,31 @@ static PyObject *__pyx_pf_5ancls_3src_4NCLS_4NCLS_16remove_sublists(struct __pyx
   __pyx_v_i = __pyx_t_2;
   __pyx_v_j = __pyx_t_3;
 
-  /* "ancls/src/NCLS.pyx":238
+  /* "ancls/src/NCLS.pyx":245
  * 
  *         i, j = 0, 0
  *         for i in range(len(self.intervals)):             # <<<<<<<<<<<<<<
  *             print("i", i)
- *             print(self.intervals[i].sublist)
+ *             print(self.intervals[i])
  */
-  __pyx_t_4 = __pyx_convert_vector_to_py_struct____pyx_t_5ancls_3src_4NCLS_Interval(__pyx_v_self->intervals); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 238, __pyx_L1_error)
+  __pyx_t_4 = __pyx_convert_vector_to_py_struct____pyx_t_5ancls_3src_4NCLS_Interval(__pyx_v_self->intervals); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 245, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_5 = PyObject_Length(__pyx_t_4); if (unlikely(__pyx_t_5 == ((Py_ssize_t)-1))) __PYX_ERR(0, 238, __pyx_L1_error)
+  __pyx_t_5 = PyObject_Length(__pyx_t_4); if (unlikely(__pyx_t_5 == ((Py_ssize_t)-1))) __PYX_ERR(0, 245, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __pyx_t_6 = __pyx_t_5;
   for (__pyx_t_3 = 0; __pyx_t_3 < __pyx_t_6; __pyx_t_3+=1) {
     __pyx_v_i = __pyx_t_3;
 
-    /* "ancls/src/NCLS.pyx":239
+    /* "ancls/src/NCLS.pyx":246
  *         i, j = 0, 0
  *         for i in range(len(self.intervals)):
  *             print("i", i)             # <<<<<<<<<<<<<<
- *             print(self.intervals[i].sublist)
- *             if self.intervals[i].sublist != -2:
+ *             print(self.intervals[i])
+ *             if self.intervals[i].index != 4294967295:
  */
-    __pyx_t_4 = __Pyx_PyInt_From_uint32_t(__pyx_v_i); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 239, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyInt_From_uint32_t(__pyx_v_i); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 246, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_7 = PyTuple_New(2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 239, __pyx_L1_error)
+    __pyx_t_7 = PyTuple_New(2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 246, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_INCREF(__pyx_n_s_i);
     __Pyx_GIVEREF(__pyx_n_s_i);
@@ -4269,80 +3866,85 @@ static PyObject *__pyx_pf_5ancls_3src_4NCLS_4NCLS_16remove_sublists(struct __pyx
     __Pyx_GIVEREF(__pyx_t_4);
     PyTuple_SET_ITEM(__pyx_t_7, 1, __pyx_t_4);
     __pyx_t_4 = 0;
-    if (__Pyx_PrintOne(0, __pyx_t_7) < 0) __PYX_ERR(0, 239, __pyx_L1_error)
+    if (__Pyx_PrintOne(0, __pyx_t_7) < 0) __PYX_ERR(0, 246, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-    /* "ancls/src/NCLS.pyx":240
+    /* "ancls/src/NCLS.pyx":247
  *         for i in range(len(self.intervals)):
  *             print("i", i)
- *             print(self.intervals[i].sublist)             # <<<<<<<<<<<<<<
- *             if self.intervals[i].sublist != -2:
+ *             print(self.intervals[i])             # <<<<<<<<<<<<<<
+ *             if self.intervals[i].index != 4294967295:
  *                 if j < i:
  */
-    __pyx_t_7 = __Pyx_PyInt_From_int32_t((__pyx_v_self->intervals[__pyx_v_i]).sublist); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 240, __pyx_L1_error)
+    __pyx_t_7 = __pyx_convert__to_py_struct____pyx_t_5ancls_3src_4NCLS_Interval((__pyx_v_self->intervals[__pyx_v_i])); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 247, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
-    if (__Pyx_PrintOne(0, __pyx_t_7) < 0) __PYX_ERR(0, 240, __pyx_L1_error)
+    if (__Pyx_PrintOne(0, __pyx_t_7) < 0) __PYX_ERR(0, 247, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-    /* "ancls/src/NCLS.pyx":241
+    /* "ancls/src/NCLS.pyx":248
  *             print("i", i)
- *             print(self.intervals[i].sublist)
- *             if self.intervals[i].sublist != -2:             # <<<<<<<<<<<<<<
+ *             print(self.intervals[i])
+ *             if self.intervals[i].index != 4294967295:             # <<<<<<<<<<<<<<
  *                 if j < i:
  *                     self.intervals[j] = self.intervals[i]
  */
-    __pyx_t_8 = (((__pyx_v_self->intervals[__pyx_v_i]).sublist != -2L) != 0);
+    __pyx_t_7 = __Pyx_PyInt_From_uint32_t((__pyx_v_self->intervals[__pyx_v_i]).index); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 248, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_7);
+    __pyx_t_4 = PyObject_RichCompare(__pyx_t_7, __pyx_int_4294967295, Py_NE); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 248, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+    __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely(__pyx_t_8 < 0)) __PYX_ERR(0, 248, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     if (__pyx_t_8) {
 
-      /* "ancls/src/NCLS.pyx":242
- *             print(self.intervals[i].sublist)
- *             if self.intervals[i].sublist != -2:
+      /* "ancls/src/NCLS.pyx":249
+ *             print(self.intervals[i])
+ *             if self.intervals[i].index != 4294967295:
  *                 if j < i:             # <<<<<<<<<<<<<<
  *                     self.intervals[j] = self.intervals[i]
- *                     j += 1
+ *                 j += 1
  */
       __pyx_t_8 = ((__pyx_v_j < __pyx_v_i) != 0);
       if (__pyx_t_8) {
 
-        /* "ancls/src/NCLS.pyx":243
- *             if self.intervals[i].sublist != -2:
+        /* "ancls/src/NCLS.pyx":250
+ *             if self.intervals[i].index != 4294967295:
  *                 if j < i:
  *                     self.intervals[j] = self.intervals[i]             # <<<<<<<<<<<<<<
- *                     j += 1
+ *                 j += 1
  * 
  */
         (__pyx_v_self->intervals[__pyx_v_j]) = (__pyx_v_self->intervals[__pyx_v_i]);
 
-        /* "ancls/src/NCLS.pyx":244
- *                 if j < i:
- *                     self.intervals[j] = self.intervals[i]
- *                     j += 1             # <<<<<<<<<<<<<<
- * 
- *         k = 0
- */
-        __pyx_v_j = (__pyx_v_j + 1);
-
-        /* "ancls/src/NCLS.pyx":242
- *             print(self.intervals[i].sublist)
- *             if self.intervals[i].sublist != -2:
+        /* "ancls/src/NCLS.pyx":249
+ *             print(self.intervals[i])
+ *             if self.intervals[i].index != 4294967295:
  *                 if j < i:             # <<<<<<<<<<<<<<
  *                     self.intervals[j] = self.intervals[i]
- *                     j += 1
+ *                 j += 1
  */
       }
 
-      /* "ancls/src/NCLS.pyx":241
+      /* "ancls/src/NCLS.pyx":251
+ *                 if j < i:
+ *                     self.intervals[j] = self.intervals[i]
+ *                 j += 1             # <<<<<<<<<<<<<<
+ * 
+ *         k = 0
+ */
+      __pyx_v_j = (__pyx_v_j + 1);
+
+      /* "ancls/src/NCLS.pyx":248
  *             print("i", i)
- *             print(self.intervals[i].sublist)
- *             if self.intervals[i].sublist != -2:             # <<<<<<<<<<<<<<
+ *             print(self.intervals[i])
+ *             if self.intervals[i].index != 4294967295:             # <<<<<<<<<<<<<<
  *                 if j < i:
  *                     self.intervals[j] = self.intervals[i]
  */
     }
   }
 
-  /* "ancls/src/NCLS.pyx":246
- *                     j += 1
+  /* "ancls/src/NCLS.pyx":253
+ *                 j += 1
  * 
  *         k = 0             # <<<<<<<<<<<<<<
  *         for k in range(0, nsub):
@@ -4350,7 +3952,7 @@ static PyObject *__pyx_pf_5ancls_3src_4NCLS_4NCLS_16remove_sublists(struct __pyx
  */
   __pyx_v_k = 0;
 
-  /* "ancls/src/NCLS.pyx":247
+  /* "ancls/src/NCLS.pyx":254
  * 
  *         k = 0
  *         for k in range(0, nsub):             # <<<<<<<<<<<<<<
@@ -4362,7 +3964,7 @@ static PyObject *__pyx_pf_5ancls_3src_4NCLS_4NCLS_16remove_sublists(struct __pyx
   for (__pyx_t_9 = 0; __pyx_t_9 < __pyx_t_2; __pyx_t_9+=1) {
     __pyx_v_k = __pyx_t_9;
 
-    /* "ancls/src/NCLS.pyx":248
+    /* "ancls/src/NCLS.pyx":255
  *         k = 0
  *         for k in range(0, nsub):
  *             self.intervals[j + k] = self.sublists[k]             # <<<<<<<<<<<<<<
@@ -4372,7 +3974,7 @@ static PyObject *__pyx_pf_5ancls_3src_4NCLS_4NCLS_16remove_sublists(struct __pyx
     (__pyx_v_self->intervals[(__pyx_v_j + __pyx_v_k)]) = (__pyx_v_self->sublists[__pyx_v_k]);
   }
 
-  /* "ancls/src/NCLS.pyx":250
+  /* "ancls/src/NCLS.pyx":257
  *             self.intervals[j + k] = self.sublists[k]
  * 
  *         for i in range(nlists):             # <<<<<<<<<<<<<<
@@ -4384,7 +3986,7 @@ static PyObject *__pyx_pf_5ancls_3src_4NCLS_4NCLS_16remove_sublists(struct __pyx
   for (__pyx_t_9 = 0; __pyx_t_9 < __pyx_t_2; __pyx_t_9+=1) {
     __pyx_v_i = __pyx_t_9;
 
-    /* "ancls/src/NCLS.pyx":251
+    /* "ancls/src/NCLS.pyx":258
  * 
  *         for i in range(nlists):
  *             self.subheaders[i].start += j             # <<<<<<<<<<<<<<
@@ -4395,14 +3997,14 @@ static PyObject *__pyx_pf_5ancls_3src_4NCLS_4NCLS_16remove_sublists(struct __pyx
     (__pyx_v_self->subheaders[__pyx_t_10]).start = ((__pyx_v_self->subheaders[__pyx_t_10]).start + __pyx_v_j);
   }
 
-  /* "ancls/src/NCLS.pyx":253
+  /* "ancls/src/NCLS.pyx":260
  *             self.subheaders[i].start += j
  * 
  *         self.ntop = j             # <<<<<<<<<<<<<<
  */
   __pyx_v_self->ntop = __pyx_v_j;
 
-  /* "ancls/src/NCLS.pyx":229
+  /* "ancls/src/NCLS.pyx":236
  * 
  * 
  *     def remove_sublists(self):             # <<<<<<<<<<<<<<
@@ -18328,7 +17930,6 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_kp_s_Cannot_index_with_type_s, __pyx_k_Cannot_index_with_type_s, sizeof(__pyx_k_Cannot_index_with_type_s), 0, 0, 1, 0},
   {&__pyx_n_s_Ellipsis, __pyx_k_Ellipsis, sizeof(__pyx_k_Ellipsis), 0, 0, 1, 1},
   {&__pyx_kp_s_Empty_shape_tuple_for_cython_arr, __pyx_k_Empty_shape_tuple_for_cython_arr, sizeof(__pyx_k_Empty_shape_tuple_for_cython_arr), 0, 0, 1, 0},
-  {&__pyx_kp_s_Heyyo, __pyx_k_Heyyo, sizeof(__pyx_k_Heyyo), 0, 0, 1, 0},
   {&__pyx_kp_s_Incompatible_checksums_s_vs_0xb0, __pyx_k_Incompatible_checksums_s_vs_0xb0, sizeof(__pyx_k_Incompatible_checksums_s_vs_0xb0), 0, 0, 1, 0},
   {&__pyx_n_s_IndexError, __pyx_k_IndexError, sizeof(__pyx_k_IndexError), 0, 0, 1, 1},
   {&__pyx_kp_s_Indirect_dimensions_not_supporte, __pyx_k_Indirect_dimensions_not_supporte, sizeof(__pyx_k_Indirect_dimensions_not_supporte), 0, 0, 1, 0},
@@ -18340,7 +17941,6 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_b_O, __pyx_k_O, sizeof(__pyx_k_O), 0, 0, 0, 1},
   {&__pyx_kp_s_Out_of_bounds_on_buffer_access_a, __pyx_k_Out_of_bounds_on_buffer_access_a, sizeof(__pyx_k_Out_of_bounds_on_buffer_access_a), 0, 0, 1, 0},
   {&__pyx_n_s_PickleError, __pyx_k_PickleError, sizeof(__pyx_k_PickleError), 0, 0, 1, 1},
-  {&__pyx_kp_s_Setting_parent_to_sublist, __pyx_k_Setting_parent_to_sublist, sizeof(__pyx_k_Setting_parent_to_sublist), 0, 0, 1, 0},
   {&__pyx_n_s_TypeError, __pyx_k_TypeError, sizeof(__pyx_k_TypeError), 0, 0, 1, 1},
   {&__pyx_kp_s_Unable_to_convert_item_to_object, __pyx_k_Unable_to_convert_item_to_object, sizeof(__pyx_k_Unable_to_convert_item_to_object), 0, 0, 1, 0},
   {&__pyx_n_s_ValueError, __pyx_k_ValueError, sizeof(__pyx_k_ValueError), 0, 0, 1, 1},
@@ -18354,8 +17954,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_cline_in_traceback, __pyx_k_cline_in_traceback, sizeof(__pyx_k_cline_in_traceback), 0, 0, 1, 1},
   {&__pyx_kp_s_contiguous_and_direct, __pyx_k_contiguous_and_direct, sizeof(__pyx_k_contiguous_and_direct), 0, 0, 1, 0},
   {&__pyx_kp_s_contiguous_and_indirect, __pyx_k_contiguous_and_indirect, sizeof(__pyx_k_contiguous_and_indirect), 0, 0, 1, 0},
-  {&__pyx_kp_s_create_sublist_header, __pyx_k_create_sublist_header, sizeof(__pyx_k_create_sublist_header), 0, 0, 1, 0},
-  {&__pyx_n_s_create_sublist_header_2, __pyx_k_create_sublist_header_2, sizeof(__pyx_k_create_sublist_header_2), 0, 0, 1, 1},
+  {&__pyx_n_s_create_sublist_header, __pyx_k_create_sublist_header, sizeof(__pyx_k_create_sublist_header), 0, 0, 1, 1},
   {&__pyx_n_s_dict, __pyx_k_dict, sizeof(__pyx_k_dict), 0, 0, 1, 1},
   {&__pyx_n_s_dtype_is_object, __pyx_k_dtype_is_object, sizeof(__pyx_k_dtype_is_object), 0, 0, 1, 1},
   {&__pyx_n_s_encode, __pyx_k_encode, sizeof(__pyx_k_encode), 0, 0, 1, 1},
@@ -18371,14 +17970,12 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_getstate, __pyx_k_getstate, sizeof(__pyx_k_getstate), 0, 0, 1, 1},
   {&__pyx_kp_s_got_differing_extents_in_dimensi, __pyx_k_got_differing_extents_in_dimensi, sizeof(__pyx_k_got_differing_extents_in_dimensi), 0, 0, 1, 0},
   {&__pyx_n_s_i, __pyx_k_i, sizeof(__pyx_k_i), 0, 0, 1, 1},
-  {&__pyx_kp_s_i_has_parent, __pyx_k_i_has_parent, sizeof(__pyx_k_i_has_parent), 0, 0, 1, 0},
   {&__pyx_n_s_id, __pyx_k_id, sizeof(__pyx_k_id), 0, 0, 1, 1},
   {&__pyx_n_s_ids, __pyx_k_ids, sizeof(__pyx_k_ids), 0, 0, 1, 1},
   {&__pyx_n_s_import, __pyx_k_import, sizeof(__pyx_k_import), 0, 0, 1, 1},
   {&__pyx_n_s_index, __pyx_k_index, sizeof(__pyx_k_index), 0, 0, 1, 1},
   {&__pyx_n_s_itemsize, __pyx_k_itemsize, sizeof(__pyx_k_itemsize), 0, 0, 1, 1},
   {&__pyx_kp_s_itemsize_0_for_cython_array, __pyx_k_itemsize_0_for_cython_array, sizeof(__pyx_k_itemsize_0_for_cython_array), 0, 0, 1, 0},
-  {&__pyx_kp_s_k_self_intervals_size, __pyx_k_k_self_intervals_size, sizeof(__pyx_k_k_self_intervals_size), 0, 0, 1, 0},
   {&__pyx_n_s_main, __pyx_k_main, sizeof(__pyx_k_main), 0, 0, 1, 1},
   {&__pyx_n_s_memview, __pyx_k_memview, sizeof(__pyx_k_memview), 0, 0, 1, 1},
   {&__pyx_n_s_mode, __pyx_k_mode, sizeof(__pyx_k_mode), 0, 0, 1, 1},
@@ -18390,7 +17987,6 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_numpy, __pyx_k_numpy, sizeof(__pyx_k_numpy), 0, 0, 1, 1},
   {&__pyx_n_s_obj, __pyx_k_obj, sizeof(__pyx_k_obj), 0, 0, 1, 1},
   {&__pyx_n_s_pack, __pyx_k_pack, sizeof(__pyx_k_pack), 0, 0, 1, 1},
-  {&__pyx_kp_s_parent_for_interval_is, __pyx_k_parent_for_interval_is, sizeof(__pyx_k_parent_for_interval_is), 0, 0, 1, 0},
   {&__pyx_n_s_pickle, __pyx_k_pickle, sizeof(__pyx_k_pickle), 0, 0, 1, 1},
   {&__pyx_n_s_print, __pyx_k_print, sizeof(__pyx_k_print), 0, 0, 1, 1},
   {&__pyx_n_s_pyx_PickleError, __pyx_k_pyx_PickleError, sizeof(__pyx_k_pyx_PickleError), 0, 0, 1, 1},
@@ -18405,17 +18001,13 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_reduce, __pyx_k_reduce, sizeof(__pyx_k_reduce), 0, 0, 1, 1},
   {&__pyx_n_s_reduce_cython, __pyx_k_reduce_cython, sizeof(__pyx_k_reduce_cython), 0, 0, 1, 1},
   {&__pyx_n_s_reduce_ex, __pyx_k_reduce_ex, sizeof(__pyx_k_reduce_ex), 0, 0, 1, 1},
-  {&__pyx_kp_s_remove_sublists, __pyx_k_remove_sublists, sizeof(__pyx_k_remove_sublists), 0, 0, 1, 0},
-  {&__pyx_n_s_remove_sublists_2, __pyx_k_remove_sublists_2, sizeof(__pyx_k_remove_sublists_2), 0, 0, 1, 1},
-  {&__pyx_kp_s_repr, __pyx_k_repr, sizeof(__pyx_k_repr), 0, 0, 1, 0},
+  {&__pyx_n_s_remove_sublists, __pyx_k_remove_sublists, sizeof(__pyx_k_remove_sublists), 0, 0, 1, 1},
   {&__pyx_n_s_set_header_indexes, __pyx_k_set_header_indexes, sizeof(__pyx_k_set_header_indexes), 0, 0, 1, 1},
-  {&__pyx_kp_s_set_headerindexes, __pyx_k_set_headerindexes, sizeof(__pyx_k_set_headerindexes), 0, 0, 1, 0},
   {&__pyx_n_s_setstate, __pyx_k_setstate, sizeof(__pyx_k_setstate), 0, 0, 1, 1},
   {&__pyx_n_s_setstate_cython, __pyx_k_setstate_cython, sizeof(__pyx_k_setstate_cython), 0, 0, 1, 1},
   {&__pyx_n_s_shape, __pyx_k_shape, sizeof(__pyx_k_shape), 0, 0, 1, 1},
   {&__pyx_n_s_size, __pyx_k_size, sizeof(__pyx_k_size), 0, 0, 1, 1},
   {&__pyx_n_s_sort_on_starts_then_longest, __pyx_k_sort_on_starts_then_longest, sizeof(__pyx_k_sort_on_starts_then_longest), 0, 0, 1, 1},
-  {&__pyx_kp_s_sort_on_sublists, __pyx_k_sort_on_sublists, sizeof(__pyx_k_sort_on_sublists), 0, 0, 1, 0},
   {&__pyx_n_s_sort_on_sublists_then_starts, __pyx_k_sort_on_sublists_then_starts, sizeof(__pyx_k_sort_on_sublists_then_starts), 0, 0, 1, 1},
   {&__pyx_n_s_start, __pyx_k_start, sizeof(__pyx_k_start), 0, 0, 1, 1},
   {&__pyx_n_s_starts, __pyx_k_starts, sizeof(__pyx_k_starts), 0, 0, 1, 1},
@@ -18773,6 +18365,7 @@ static int __Pyx_InitGlobals(void) {
   __pyx_int_0 = PyInt_FromLong(0); if (unlikely(!__pyx_int_0)) __PYX_ERR(0, 2, __pyx_L1_error)
   __pyx_int_1 = PyInt_FromLong(1); if (unlikely(!__pyx_int_1)) __PYX_ERR(0, 2, __pyx_L1_error)
   __pyx_int_184977713 = PyInt_FromLong(184977713L); if (unlikely(!__pyx_int_184977713)) __PYX_ERR(0, 2, __pyx_L1_error)
+  __pyx_int_4294967295 = PyInt_FromString((char *)"4294967295", 0, 0); if (unlikely(!__pyx_int_4294967295)) __PYX_ERR(0, 2, __pyx_L1_error)
   __pyx_int_neg_1 = PyInt_FromLong(-1); if (unlikely(!__pyx_int_neg_1)) __PYX_ERR(0, 2, __pyx_L1_error)
   return 0;
   __pyx_L1_error:;
@@ -22220,7 +21813,60 @@ __pyx_fail:
         return (target_type) value;\
     }
 
-/* Print */
+/* CIntToPy */
+          static CYTHON_INLINE PyObject* __Pyx_PyInt_From_int32_t(int32_t value) {
+    const int32_t neg_one = (int32_t) -1, const_zero = (int32_t) 0;
+    const int is_unsigned = neg_one > const_zero;
+    if (is_unsigned) {
+        if (sizeof(int32_t) < sizeof(long)) {
+            return PyInt_FromLong((long) value);
+        } else if (sizeof(int32_t) <= sizeof(unsigned long)) {
+            return PyLong_FromUnsignedLong((unsigned long) value);
+#ifdef HAVE_LONG_LONG
+        } else if (sizeof(int32_t) <= sizeof(unsigned PY_LONG_LONG)) {
+            return PyLong_FromUnsignedLongLong((unsigned PY_LONG_LONG) value);
+#endif
+        }
+    } else {
+        if (sizeof(int32_t) <= sizeof(long)) {
+            return PyInt_FromLong((long) value);
+#ifdef HAVE_LONG_LONG
+        } else if (sizeof(int32_t) <= sizeof(PY_LONG_LONG)) {
+            return PyLong_FromLongLong((PY_LONG_LONG) value);
+#endif
+        }
+    }
+    {
+        int one = 1; int little = (int)*(unsigned char *)&one;
+        unsigned char *bytes = (unsigned char *)&value;
+        return _PyLong_FromByteArray(bytes, sizeof(int32_t),
+                                     little, !is_unsigned);
+    }
+}
+
+static PyObject* __pyx_convert__to_py_struct____pyx_t_5ancls_3src_4NCLS_Interval(struct __pyx_t_5ancls_3src_4NCLS_Interval s) {
+            PyObject* res;
+            PyObject* member;
+            res = __Pyx_PyDict_NewPresized(4); if (unlikely(!res)) return NULL;
+            member = __Pyx_PyInt_From_uint32_t(s.start); if (unlikely(!member)) goto bad;
+            if (unlikely(PyDict_SetItem(res, __pyx_n_s_start, member) < 0)) goto bad;
+            Py_DECREF(member);
+            member = __Pyx_PyInt_From_uint32_t(s.end); if (unlikely(!member)) goto bad;
+            if (unlikely(PyDict_SetItem(res, __pyx_n_s_end, member) < 0)) goto bad;
+            Py_DECREF(member);
+            member = __Pyx_PyInt_From_uint32_t(s.index); if (unlikely(!member)) goto bad;
+            if (unlikely(PyDict_SetItem(res, __pyx_n_s_index, member) < 0)) goto bad;
+            Py_DECREF(member);
+            member = __Pyx_PyInt_From_int32_t(s.sublist); if (unlikely(!member)) goto bad;
+            if (unlikely(PyDict_SetItem(res, __pyx_n_s_sublist, member) < 0)) goto bad;
+            Py_DECREF(member);
+            return res;
+            bad:
+            Py_XDECREF(member);
+            Py_DECREF(res);
+            return NULL;
+          }
+          /* Print */
           #if !CYTHON_COMPILING_IN_PYPY && PY_MAJOR_VERSION < 3
 static PyObject *__Pyx_GetStdout(void) {
     PyObject *f = PySys_GetObject((char *)"stdout");
@@ -22325,90 +21971,6 @@ bad:
     return -1;
 }
 #endif
-
-/* CIntToPy */
-          static CYTHON_INLINE PyObject* __Pyx_PyInt_From_int32_t(int32_t value) {
-    const int32_t neg_one = (int32_t) -1, const_zero = (int32_t) 0;
-    const int is_unsigned = neg_one > const_zero;
-    if (is_unsigned) {
-        if (sizeof(int32_t) < sizeof(long)) {
-            return PyInt_FromLong((long) value);
-        } else if (sizeof(int32_t) <= sizeof(unsigned long)) {
-            return PyLong_FromUnsignedLong((unsigned long) value);
-#ifdef HAVE_LONG_LONG
-        } else if (sizeof(int32_t) <= sizeof(unsigned PY_LONG_LONG)) {
-            return PyLong_FromUnsignedLongLong((unsigned PY_LONG_LONG) value);
-#endif
-        }
-    } else {
-        if (sizeof(int32_t) <= sizeof(long)) {
-            return PyInt_FromLong((long) value);
-#ifdef HAVE_LONG_LONG
-        } else if (sizeof(int32_t) <= sizeof(PY_LONG_LONG)) {
-            return PyLong_FromLongLong((PY_LONG_LONG) value);
-#endif
-        }
-    }
-    {
-        int one = 1; int little = (int)*(unsigned char *)&one;
-        unsigned char *bytes = (unsigned char *)&value;
-        return _PyLong_FromByteArray(bytes, sizeof(int32_t),
-                                     little, !is_unsigned);
-    }
-}
-
-static PyObject* __pyx_convert__to_py_struct____pyx_t_5ancls_3src_4NCLS_Interval(struct __pyx_t_5ancls_3src_4NCLS_Interval s) {
-            PyObject* res;
-            PyObject* member;
-            res = __Pyx_PyDict_NewPresized(4); if (unlikely(!res)) return NULL;
-            member = __Pyx_PyInt_From_uint32_t(s.start); if (unlikely(!member)) goto bad;
-            if (unlikely(PyDict_SetItem(res, __pyx_n_s_start, member) < 0)) goto bad;
-            Py_DECREF(member);
-            member = __Pyx_PyInt_From_uint32_t(s.end); if (unlikely(!member)) goto bad;
-            if (unlikely(PyDict_SetItem(res, __pyx_n_s_end, member) < 0)) goto bad;
-            Py_DECREF(member);
-            member = __Pyx_PyInt_From_uint32_t(s.index); if (unlikely(!member)) goto bad;
-            if (unlikely(PyDict_SetItem(res, __pyx_n_s_index, member) < 0)) goto bad;
-            Py_DECREF(member);
-            member = __Pyx_PyInt_From_int32_t(s.sublist); if (unlikely(!member)) goto bad;
-            if (unlikely(PyDict_SetItem(res, __pyx_n_s_sublist, member) < 0)) goto bad;
-            Py_DECREF(member);
-            return res;
-            bad:
-            Py_XDECREF(member);
-            Py_DECREF(res);
-            return NULL;
-          }
-          /* CIntToPy */
-          static CYTHON_INLINE PyObject* __Pyx_PyInt_From_long(long value) {
-    const long neg_one = (long) -1, const_zero = (long) 0;
-    const int is_unsigned = neg_one > const_zero;
-    if (is_unsigned) {
-        if (sizeof(long) < sizeof(long)) {
-            return PyInt_FromLong((long) value);
-        } else if (sizeof(long) <= sizeof(unsigned long)) {
-            return PyLong_FromUnsignedLong((unsigned long) value);
-#ifdef HAVE_LONG_LONG
-        } else if (sizeof(long) <= sizeof(unsigned PY_LONG_LONG)) {
-            return PyLong_FromUnsignedLongLong((unsigned PY_LONG_LONG) value);
-#endif
-        }
-    } else {
-        if (sizeof(long) <= sizeof(long)) {
-            return PyInt_FromLong((long) value);
-#ifdef HAVE_LONG_LONG
-        } else if (sizeof(long) <= sizeof(PY_LONG_LONG)) {
-            return PyLong_FromLongLong((PY_LONG_LONG) value);
-#endif
-        }
-    }
-    {
-        int one = 1; int little = (int)*(unsigned char *)&one;
-        unsigned char *bytes = (unsigned char *)&value;
-        return _PyLong_FromByteArray(bytes, sizeof(long),
-                                     little, !is_unsigned);
-    }
-}
 
 /* MemviewSliceCopyTemplate */
           static __Pyx_memviewslice
@@ -22855,43 +22417,6 @@ raise_neg_overflow:
     return (int32_t) -1;
 }
 
-/* PrintOne */
-          #if !CYTHON_COMPILING_IN_PYPY && PY_MAJOR_VERSION < 3
-static int __Pyx_PrintOne(PyObject* f, PyObject *o) {
-    if (!f) {
-        if (!(f = __Pyx_GetStdout()))
-            return -1;
-    }
-    Py_INCREF(f);
-    if (PyFile_SoftSpace(f, 0)) {
-        if (PyFile_WriteString(" ", f) < 0)
-            goto error;
-    }
-    if (PyFile_WriteObject(o, f, Py_PRINT_RAW) < 0)
-        goto error;
-    if (PyFile_WriteString("\n", f) < 0)
-        goto error;
-    Py_DECREF(f);
-    return 0;
-error:
-    Py_DECREF(f);
-    return -1;
-    /* the line below is just to avoid C compiler
-     * warnings about unused functions */
-    return __Pyx_Print(f, NULL, 0);
-}
-#else
-static int __Pyx_PrintOne(PyObject* stream, PyObject *o) {
-    int res;
-    PyObject* arg_tuple = PyTuple_Pack(1, o);
-    if (unlikely(!arg_tuple))
-        return -1;
-    res = __Pyx_Print(stream, arg_tuple, 1);
-    Py_DECREF(arg_tuple);
-    return res;
-}
-#endif
-
 /* CIntFromPy */
           static CYTHON_INLINE long __Pyx_PyInt_As_long(PyObject *x) {
     const long neg_one = (long) -1, const_zero = (long) 0;
@@ -23080,6 +22605,43 @@ raise_neg_overflow:
         "can't convert negative value to long");
     return (long) -1;
 }
+
+/* PrintOne */
+          #if !CYTHON_COMPILING_IN_PYPY && PY_MAJOR_VERSION < 3
+static int __Pyx_PrintOne(PyObject* f, PyObject *o) {
+    if (!f) {
+        if (!(f = __Pyx_GetStdout()))
+            return -1;
+    }
+    Py_INCREF(f);
+    if (PyFile_SoftSpace(f, 0)) {
+        if (PyFile_WriteString(" ", f) < 0)
+            goto error;
+    }
+    if (PyFile_WriteObject(o, f, Py_PRINT_RAW) < 0)
+        goto error;
+    if (PyFile_WriteString("\n", f) < 0)
+        goto error;
+    Py_DECREF(f);
+    return 0;
+error:
+    Py_DECREF(f);
+    return -1;
+    /* the line below is just to avoid C compiler
+     * warnings about unused functions */
+    return __Pyx_Print(f, NULL, 0);
+}
+#else
+static int __Pyx_PrintOne(PyObject* stream, PyObject *o) {
+    int res;
+    PyObject* arg_tuple = PyTuple_Pack(1, o);
+    if (unlikely(!arg_tuple))
+        return -1;
+    res = __Pyx_Print(stream, arg_tuple, 1);
+    Py_DECREF(arg_tuple);
+    return res;
+}
+#endif
 
 /* CIntFromPy */
           static CYTHON_INLINE size_t __Pyx_PyInt_As_size_t(PyObject *x) {
@@ -23486,6 +23048,37 @@ raise_neg_overflow:
         int one = 1; int little = (int)*(unsigned char *)&one;
         unsigned char *bytes = (unsigned char *)&value;
         return _PyLong_FromByteArray(bytes, sizeof(int),
+                                     little, !is_unsigned);
+    }
+}
+
+/* CIntToPy */
+          static CYTHON_INLINE PyObject* __Pyx_PyInt_From_long(long value) {
+    const long neg_one = (long) -1, const_zero = (long) 0;
+    const int is_unsigned = neg_one > const_zero;
+    if (is_unsigned) {
+        if (sizeof(long) < sizeof(long)) {
+            return PyInt_FromLong((long) value);
+        } else if (sizeof(long) <= sizeof(unsigned long)) {
+            return PyLong_FromUnsignedLong((unsigned long) value);
+#ifdef HAVE_LONG_LONG
+        } else if (sizeof(long) <= sizeof(unsigned PY_LONG_LONG)) {
+            return PyLong_FromUnsignedLongLong((unsigned PY_LONG_LONG) value);
+#endif
+        }
+    } else {
+        if (sizeof(long) <= sizeof(long)) {
+            return PyInt_FromLong((long) value);
+#ifdef HAVE_LONG_LONG
+        } else if (sizeof(long) <= sizeof(PY_LONG_LONG)) {
+            return PyLong_FromLongLong((PY_LONG_LONG) value);
+#endif
+        }
+    }
+    {
+        int one = 1; int little = (int)*(unsigned char *)&one;
+        unsigned char *bytes = (unsigned char *)&value;
+        return _PyLong_FromByteArray(bytes, sizeof(long),
                                      little, !is_unsigned);
     }
 }

@@ -83,26 +83,31 @@ cdef class NCLS:
 
         if self.nsub > 0:
 
-            print("set headerindexes")
+            # print("set headerindexes")
             self.set_header_indexes()
-            print("sort on sublists")
+            # print("sort on sublists")
             self.sort_on_sublists_then_starts()
 
-            print("create sublist header")
+            # print("create sublist header")
+            # print("before", list(self.intervals))
             self.create_sublist_header()
+            # print("last", list(self.intervals))
+            # print("last subheaders", list(self.subheaders))
 
-            print("remove sublists")
+            # print("remove sublists")
             self.remove_sublists()
+            # print("final", list(self.intervals))
+            # print("final", list(self.subheaders))
 
     def __str__(self):
 
-        print("Heyyo!")
+        # print("Heyyo!")
         return(str(self.intervals))
 
 
     def __repr__(self):
 
-        print("repr!")
+        # print("repr!")
         return(str(self.intervals))
 
 
@@ -131,7 +136,7 @@ cdef class NCLS:
 
         nsub = 0
 
-        print(list(self.intervals))
+        # print(list(self.intervals))
 
         i = 0
         while (i < length):
@@ -144,10 +149,10 @@ cdef class NCLS:
 
                 if same_or_not_contained:
                     parent = self.intervals[parent].sublist # all are -1 on instantiation
-                    print("i: {} has parent {}".format(i, self.intervals[parent]))
+                    # # print("i: {} has parent {} {}".format(i, parent, self.intervals[parent]))
                 else:
                     self.intervals[i].sublist = parent # MARK AS CONTAINED IN parent
-                    print("i: {} has parent {}".format(i, self.intervals[parent]))
+                    # print("i: {} has parent {} {}".format(i, parent, self.intervals[parent]))
                     nsub += 1 # COUNT TOTAL #SUBLIST ENTRIES
                     parent = i # AND PUSH ONTO RECURSIVE STACK
                     i += 1 # ADVANCE TO NEXT INTERVAL
@@ -169,14 +174,14 @@ cdef class NCLS:
 
         for i in range(length):
             parent = self.intervals[i].sublist
-            print("parent for interval {} is {}".format(i, parent))
+            # print("parent for interval {} is {}".format(i, parent))
             if parent >= 0:
                 sublists[j].start = i
                 sublists[j].sublist = parent
                 j += 1
 
                 if self.intervals[parent].sublist < 0:
-                    print("Setting parent {} to sublist {}".format(parent, nlists + 1))
+                    # print("Setting parent {} to sublist {}".format(parent, nlists + 1))
                     self.intervals[parent].sublist = nlists
                     nlists += 1
 
@@ -202,26 +207,28 @@ cdef class NCLS:
         for i in range(nsub):
 
             j = self.sublists[i].start
-            # print("j, self.intervals.size()", j, self.intervals.size())
+            # # print("j, self.intervals.size()", j, self.intervals.size())
             parent = self.sublists[i].sublist
-            # print("i, self.sublists.size()", i, self.sublists.size())
+            # # print("i, self.sublists.size()", i, self.sublists.size())
 
             self.sublists[i] = self.intervals[j]
 
             # k=im[parent].sublist;
             # if (subheader[k].len==0) /* START A NEW SUBLIST */
             #   subheader[k].start=i;
-            # print("parent", parent)
+            # # print("parent", parent)
             # raise
             k = self.intervals[parent].sublist
 
-            print("k, self.intervals.size()", k, self.subheaders.size())
+            # print("k, self.intervals.size()", k, self.subheaders.size())
             if self.subheaders[k].length == zero:
+                # print("Setting k to i", k, i)
                 self.subheaders[k].start = i
 
             self.subheaders[k].length += 1
+            # print("i, k, s", i, k, self.subheaders[k])
 
-            self.intervals[j].sublist = -2 # mark for deletion
+            self.intervals[j].index = 4294967295 # mark for deletion
 
 
 
@@ -236,12 +243,12 @@ cdef class NCLS:
 
         i, j = 0, 0
         for i in range(len(self.intervals)):
-            print("i", i)
-            print(self.intervals[i].sublist)
-            if self.intervals[i].sublist != -2:
+            # print("i", i)
+            # print(self.intervals[i])
+            if self.intervals[i].index != 4294967295:
                 if j < i:
                     self.intervals[j] = self.intervals[i]
-                    j += 1
+                j += 1
 
         k = 0
         for k in range(0, nsub):
